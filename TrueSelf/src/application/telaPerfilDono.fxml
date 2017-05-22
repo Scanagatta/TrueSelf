@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="89.0" fitWidth="112.0" layoutX="46.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../large.fogo-agua.jpg.d0dfafac94815d89f656a7b3443d1d41.jpg" />
+               </image>
+            </ImageView>
+            <Text layoutX="211.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto" />
+            <Text layoutX="316.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Idade" />
+            <TableView layoutX="14.0" layoutY="137.0" prefHeight="204.0" prefWidth="504.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Data" />
+                <TableColumn prefWidth="340.0" text="Comentario" />
+                  <TableColumn minWidth="0.0" prefWidth="76.0" text="Classificação" />
+              </columns>
+            </TableView>
+            <Text layoutX="484.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo" />
+            <Text layoutX="362.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio" />
+            <Text layoutX="221.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro" />
+            <ComboBox layoutX="83.0" layoutY="354.0" prefWidth="150.0" />
+            <Text layoutX="34.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avaliar" />
+            <Button layoutX="274.0" layoutY="354.0" mnemonicParsing="false" text="ok" />
+            <Button layoutX="527.0" layoutY="21.0" mnemonicParsing="false" text="sair" />
+            <Button layoutX="458.0" layoutY="21.0" mnemonicParsing="false" text="pesquiar" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
