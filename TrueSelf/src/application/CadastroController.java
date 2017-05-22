@@ -72,7 +72,14 @@ public class CadastroController {
     	String confirmaSenha = cpsSenha.getText();
     	// ver se as senhas estao vazias
     	if(senha.isEmpty() || confirmaSenha.isEmpty()){
-    		return false;
+    		Alert alert = new Alert(AlertType.ERROR);
+    		alert.setTitle("Erro");
+			alert.setHeaderText("Ação inválida");
+			alert.setContentText("Preencha os campos");
+			alert.showAndWait();
+			limparSenha();
+			return false;
+    		
     	}
     	// ver se as senhas sao iguais
     	if(senha.equals(confirmaSenha)){
@@ -81,8 +88,8 @@ public class CadastroController {
     	} else {
     		Alert alert = new Alert(AlertType.ERROR);
     		alert.setTitle("Erro");
-			alert.setHeaderText(senha);
-			alert.setContentText(confirmaSenha);
+			alert.setHeaderText("As senhas não são iguais");
+			alert.setContentText("Digite a senha corretamente");
 			alert.showAndWait();
 			limparSenha();
 			return false;

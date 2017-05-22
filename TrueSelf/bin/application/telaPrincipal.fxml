@@ -12,9 +12,9 @@
          <children>
             <Button fx:id="btnLogin" layoutX="302.0" layoutY="279.0" mnemonicParsing="false" onAction="#onLogar" prefHeight="109.0" prefWidth="294.0" text="login" />
             <Button fx:id="btnCadastro" layoutX="8.0" layoutY="279.0" mnemonicParsing="false" onAction="#onCadastrar" prefHeight="107.0" prefWidth="284.0" text="cadastre-se" />
-            <ImageView fitHeight="167.0" fitWidth="588.0" layoutX="7.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="167.0" fitWidth="588.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Pictures/Sem%20Título-1.jpg" />
+                  <Image url="@../../Sem%20Título-1.jpg" />
                </image>
             </ImageView>
          </children>
