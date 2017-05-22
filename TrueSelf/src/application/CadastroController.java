@@ -74,7 +74,7 @@ public class CadastroController {
     	if(senha.isEmpty() || confirmaSenha.isEmpty()){
     		Alert alert = new Alert(AlertType.ERROR);
     		alert.setTitle("Erro");
-			alert.setHeaderText("AÁ„o inv·lida");
+			alert.setHeaderText("A√ß√£o inv√°lida");
 			alert.setContentText("Preencha os campos");
 			alert.showAndWait();
 			limparSenha();
@@ -88,7 +88,7 @@ public class CadastroController {
     	} else {
     		Alert alert = new Alert(AlertType.ERROR);
     		alert.setTitle("Erro");
-			alert.setHeaderText("As senhas n„o s„o iguais");
+			alert.setHeaderText("As senhas n√£o s√£o iguais");
 			alert.setContentText("Digite a senha corretamente");
 			alert.showAndWait();
 			limparSenha();
