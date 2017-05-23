@@ -28,7 +28,7 @@
                   <TableColumn minWidth="0.0" prefWidth="76.0" text="Classificação" />
               </columns>
             </TableView>
-            <Text fx:id="countAnjo" layoutX="484.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo" />
+            <Text fx:id="countAnjo" layoutX="523.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo" />
             <Text fx:id="countDemonio" layoutX="362.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio" />
             <Text fx:id="countNeutro" layoutX="221.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro" />
             <ComboBox layoutX="83.0" layoutY="354.0" prefWidth="150.0" />
@@ -36,6 +36,21 @@
             <Button fx:id="btnAvaliacao" layoutX="274.0" layoutY="354.0" mnemonicParsing="false" text="ok" />
             <Button fx:id="btnSair" layoutX="527.0" layoutY="21.0" mnemonicParsing="false" onAction="#onSair" text="sair" />
             <Button fx:id="btnPesquisar" layoutX="458.0" layoutY="21.0" mnemonicParsing="false" onAction="#onPesquisar" text="pesquisar" />
+            <ImageView fitHeight="55.0" fitWidth="236.0" layoutX="158.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Desktop/Sem%20título-21.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="55.0" fitWidth="56.0" layoutX="303.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Desktop/Sem%20título-31.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="55.0" fitWidth="56.0" layoutX="464.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Desktop/Sem%20título-1.jpg" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

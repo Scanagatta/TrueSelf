@@ -10,12 +10,12 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPrimeiraController">
    <children>
       <Pane layoutX="10.0" layoutY="10.0" />
-      <ImageView fitHeight="465.0" fitWidth="630.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="465.0" fitWidth="630.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../trueself.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnCadastro" layoutX="31.0" layoutY="282.0" mnemonicParsing="false" onAction="#onCadastrar" prefHeight="107.0" prefWidth="278.0" text="CADASTRE-SE" textFill="#07c7f2">
+      <Button fx:id="btnCadastro" layoutX="31.0" layoutY="282.0" mnemonicParsing="false" onAction="#onCadastrar" prefHeight="107.0" prefWidth="278.0" text="CADASTRE-SE" textFill="#111111">
          <font>
             <Font name="Eras Demi ITC" size="34.0" />
          </font></Button>
