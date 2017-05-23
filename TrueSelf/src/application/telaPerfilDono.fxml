@@ -10,32 +10,32 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PerfilDonoController">
    <children>
-      <Pane prefHeight="400.0" prefWidth="600.0">
+      <Pane fx:id="cbxAvaliacao" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <ImageView fitHeight="89.0" fitWidth="112.0" layoutX="46.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="86.0" fitWidth="75.0" layoutX="7.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../large.fogo-agua.jpg.d0dfafac94815d89f656a7b3443d1d41.jpg" />
+                  <Image url="@../../twice-tt-nayeon.jpg" />
                </image>
             </ImageView>
-            <Text layoutX="211.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto" />
-            <Text layoutX="316.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Idade" />
-            <TableView layoutX="14.0" layoutY="137.0" prefHeight="204.0" prefWidth="504.0">
+            <Text fx:id="tNome" layoutX="211.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto" />
+            <Text fx:id="tIdade" layoutX="316.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Idade" />
+            <TableView fx:id="lvComentarios" layoutX="14.0" layoutY="137.0" prefHeight="204.0" prefWidth="504.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="Data" />
                 <TableColumn prefWidth="340.0" text="Comentario" />
                   <TableColumn minWidth="0.0" prefWidth="76.0" text="Classificação" />
               </columns>
             </TableView>
-            <Text layoutX="484.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo" />
-            <Text layoutX="362.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio" />
-            <Text layoutX="221.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro" />
+            <Text fx:id="countAnjo" layoutX="484.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo" />
+            <Text fx:id="countDemonio" layoutX="362.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio" />
+            <Text fx:id="countNeutro" layoutX="221.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro" />
             <ComboBox layoutX="83.0" layoutY="354.0" prefWidth="150.0" />
             <Text layoutX="34.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avaliar" />
-            <Button layoutX="274.0" layoutY="354.0" mnemonicParsing="false" text="ok" />
-            <Button layoutX="527.0" layoutY="21.0" mnemonicParsing="false" text="sair" />
-            <Button layoutX="458.0" layoutY="21.0" mnemonicParsing="false" text="pesquiar" />
+            <Button fx:id="btnAvaliacao" layoutX="274.0" layoutY="354.0" mnemonicParsing="false" text="ok" />
+            <Button fx:id="btnSair" layoutX="527.0" layoutY="21.0" mnemonicParsing="false" onAction="#onSair" text="sair" />
+            <Button fx:id="btnPesquisar" layoutX="458.0" layoutY="21.0" mnemonicParsing="false" onAction="#onPesquisar" text="pesquisar" />
          </children>
       </Pane>
    </children>

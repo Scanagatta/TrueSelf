@@ -82,10 +82,10 @@ public class CadastroController {
     	conferirSenha();
     	SimuladorDB.insert(usuario);
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("telaPerfilDono.fxml"));
+    	loader.setLocation(getClass().getResource("telaLogin.fxml"));
     	try{
-    		AnchorPane donoView = (AnchorPane) loader.load();
-    		TelaPrincipal.root.setCenter(donoView);
+    		AnchorPane loginView = (AnchorPane) loader.load();
+    		TelaPrincipal.root.setCenter(loginView);
     		
     	} catch (IOException e1) {
     		e1.printStackTrace();
