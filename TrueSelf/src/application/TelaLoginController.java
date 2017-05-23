@@ -5,6 +5,7 @@ import java.io.IOException;
 import TrueSelf.modelo.SimuladorDB;
 import TrueSelf.modelo.Usuario;
 import javafx.event.ActionEvent;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
@@ -42,7 +43,6 @@ public class TelaLoginController {
     	loader.setLocation(getClass().getResource("telaPerfilDono.fxml"));
     	try{
     		AnchorPane donoView = (AnchorPane) loader.load();
-    		TelaPrincipalController.trocarTela(donoView);
     		
     	} catch (IOException e1) {
     		e1.printStackTrace();

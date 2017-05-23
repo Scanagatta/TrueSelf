@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPrimeiraController">
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="btnLogin" layoutX="302.0" layoutY="279.0" mnemonicParsing="false" onAction="#onLogar" prefHeight="109.0" prefWidth="294.0" text="login" />
+            <Button fx:id="btnCadastro" layoutX="8.0" layoutY="279.0" mnemonicParsing="false" onAction="#onCadastrar" prefHeight="107.0" prefWidth="284.0" text="cadastre-se" />
+            <ImageView fitHeight="167.0" fitWidth="588.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Sem%20Título-1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

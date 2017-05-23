@@ -3,6 +3,7 @@ package application;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -19,6 +20,17 @@ public void start(Stage primaryStage) throws Exception {
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		primaryStage.setScene(scene);
+
+		
+		FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(getClass().getResource("telaPrimeira.fxml"));
+    	
+    		AnchorPane agenciaView = (AnchorPane) loader.load();
+    		root.setCenter(agenciaView);
+    		
+ 
+ 
+		
 		primaryStage.show();
 	} catch (Exception e) {
 		e.printStackTrace();
