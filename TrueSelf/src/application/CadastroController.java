@@ -79,6 +79,7 @@ public class CadastroController {
     	usuario.setTelefone(tfTelefone.getText());
     	usuario.setDataNascimento(dtNascimento.getValue());
     	usuario.setLogin(tfLogin.getText());
+    	usuario.setEstadoCivil(cbEstadoCivil.getValue());
     	conferirSenha();
     	SimuladorDB.insert(usuario);
     	FXMLLoader loader = new FXMLLoader();

@@ -24,7 +24,6 @@ public class Usuario implements Serializable {
 	private Integer qtdDemonio;
 	private Integer qtdAnjo;
 	private List<String> comentario = new ArrayList<String>();
-	private Integer idade;
 	
 	@Override
 	public String toString() {
