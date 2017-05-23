@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -30,17 +31,16 @@ public class TelaLoginController {
   
     
     @FXML
-    void onVoltar(){
+    void onVoltar(ActionEvent event) {
     	FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("telaPrincipal.fxml"));
+    	loader.setLocation(getClass().getResource("telaPrimeira.fxml"));
     	try{
-    		BorderPane principalView = (BorderPane) loader.load();
-    		TelaPrincipalController.trocarTela(principalView);
+    		AnchorPane principal1View = (AnchorPane) loader.load();
+    		TelaPrincipal.root.setCenter(principal1View);
     		
     	} catch (IOException e1) {
     		e1.printStackTrace();
     	}
-
     }
 	
 }

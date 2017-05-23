@@ -1,10 +1,13 @@
 package application;
 
+import java.io.IOException;
+
 import TrueSelf.modelo.SimuladorDB;
 import TrueSelf.modelo.Usuario;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -54,6 +57,19 @@ public class CadastroController {
     
     public void novo(){
     	usuario = new Usuario();
+    }
+    
+    @FXML
+    void onVoltar(ActionEvent event) {
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(getClass().getResource("telaPrimeira.fxml"));
+    	try{
+    		AnchorPane principal1View = (AnchorPane) loader.load();
+    		TelaPrincipal.root.setCenter(principal1View);
+    		
+    	} catch (IOException e1) {
+    		e1.printStackTrace();
+    	}
     }
     
     @FXML

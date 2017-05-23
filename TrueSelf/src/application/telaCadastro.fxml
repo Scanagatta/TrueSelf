@@ -29,7 +29,7 @@
             <Text layoutX="92.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmar senha" />
             <PasswordField fx:id="cpsSenha" layoutX="247.0" layoutY="345.0" />
             <Button fx:id="btnSalvar" layoutX="452.0" layoutY="353.0" mnemonicParsing="false" onAction="#onsalvar" text="salvar" />
-            <Button fx:id="btnVoltar" layoutX="516.0" layoutY="353.0" mnemonicParsing="false" text="voltar" />
+            <Button fx:id="btnVoltar" layoutX="516.0" layoutY="353.0" mnemonicParsing="false" onAction="#onVoltar" text="voltar" />
          </children>
       </Pane>
    </children>
