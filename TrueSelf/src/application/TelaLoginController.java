@@ -30,13 +30,16 @@ public class TelaLoginController {
 
 	@FXML
 	private Button btnVoltar;
-
+	
+	private static String dono;
+	
 	@FXML
 	void onEntar(ActionEvent event) {
 		String login = tfLogin.getText();
 		String senha = pfSenha.getText();
 		Usuario usuario = SimuladorDB.getLogin(login);
 		if (usuario != null && usuario.getSenha().equals(senha)) {
+			setDono(login);
 	    	FXMLLoader loader = new FXMLLoader();
 	    	loader.setLocation(getClass().getResource("telaPerfilDono.fxml"));
 	    	try{
@@ -46,8 +49,6 @@ public class TelaLoginController {
 	    	} catch (IOException e1) {
 	    		e1.printStackTrace();
 	    	}
-
-
 		} else {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Erro");
@@ -68,6 +69,14 @@ public class TelaLoginController {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
+	}
+
+	public static String getDono() {
+		return dono;
+	}
+
+	public void setDono(String dono) {
+		this.dono = dono;
 	}
 
 }
