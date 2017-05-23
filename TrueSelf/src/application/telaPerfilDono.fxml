@@ -38,17 +38,17 @@
             <Button fx:id="btnPesquisar" layoutX="458.0" layoutY="21.0" mnemonicParsing="false" onAction="#onPesquisar" text="pesquisar" />
             <ImageView fitHeight="55.0" fitWidth="236.0" layoutX="158.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Desktop/Sem%20título-21.jpg" />
+                  <Image url="@../../Sem%20título-21.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="55.0" fitWidth="56.0" layoutX="303.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Desktop/Sem%20título-31.jpg" />
+                  <Image url="@../../Sem%20título-31.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="55.0" fitWidth="56.0" layoutX="464.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Desktop/Sem%20título-1.jpg" />
+                  <Image url="@../../Sem%20título-1.jpg" />
                </image>
             </ImageView>
          </children>
