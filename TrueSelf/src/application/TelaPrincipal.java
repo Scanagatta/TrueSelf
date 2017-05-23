@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class TelaPrincipal extends Application {
 
-private static BorderPane root;
+public static BorderPane root;
 
 @Override
 public void start(Stage primaryStage) throws Exception {

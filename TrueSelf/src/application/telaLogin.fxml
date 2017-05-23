@@ -16,7 +16,7 @@
             <Text layoutX="96.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" />
             <PasswordField fx:id="pfSenha" layoutX="253.0" layoutY="145.0" />
             <Text layoutX="85.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN" />
-            <Button fx:id="btnEntrar" layoutX="120.0" layoutY="227.0" mnemonicParsing="false" text="entrar" />
+            <Button fx:id="btnEntrar" layoutX="120.0" layoutY="227.0" mnemonicParsing="false" onAction="#onEntar" text="entrar" />
             <Button fx:id="btnVoltar" layoutX="202.0" layoutY="227.0" mnemonicParsing="false" onAction="#onVoltar" text="voltar" />
          </children>
       </Pane>

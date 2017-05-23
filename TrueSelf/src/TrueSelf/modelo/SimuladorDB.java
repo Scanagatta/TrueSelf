@@ -13,6 +13,7 @@ public class SimuladorDB {
 	static{
 		usuarios = new ArrayList<>();
 		manipuladorArquivo = new ManipuladorArquivo();
+		usuarios.addAll(manipuladorArquivo.recuperar("usuarios.ser"));
 	}
 	
 	public static void atualizarUsuarios(){
@@ -28,6 +29,18 @@ public class SimuladorDB {
 	public static List<Usuario> getUsuarios() {
 		return usuarios;
 	}
+	
+	public static Usuario getLogin(String login) {
+		for (Usuario usuario : usuarios) {
+			if (login.equals(usuario.getLogin())) {
+				return usuario;
+			}
+		}
+		return null;
+	}
+
+
+
 
 	public static void setUsuarios(List<Usuario> usuarios) {
 		SimuladorDB.usuarios = usuarios;
