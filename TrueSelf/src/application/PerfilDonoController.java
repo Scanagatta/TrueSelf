@@ -69,6 +69,8 @@ public class PerfilDonoController {
 	    @FXML
 	    void onPesquisar(ActionEvent event){
 	    	//boa sorte joao
+	    	
+	    	// boa sorte tu kkk
 	    }
 	    
 	    
