@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PerfilDonoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPerfilDonoController">
    <children>
       <Pane fx:id="cbxAvaliacao" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -20,7 +20,7 @@
                </image>
             </ImageView>
             <Text fx:id="tNome" layoutX="211.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto" />
-            <Text fx:id="tIdade" layoutX="316.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Idade" />
+            <Text fx:id="tEstadoCivil" layoutX="206.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Idade" />
             <TableView fx:id="lvComentarios" layoutX="14.0" layoutY="137.0" prefHeight="204.0" prefWidth="504.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="Data" />
