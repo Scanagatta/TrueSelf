@@ -5,19 +5,23 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPrimeiraController">
    <children>
-      <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="btnLogin" layoutX="302.0" layoutY="279.0" mnemonicParsing="false" onAction="#onLogar" prefHeight="109.0" prefWidth="294.0" text="login" />
-            <Button fx:id="btnCadastro" layoutX="8.0" layoutY="279.0" mnemonicParsing="false" onAction="#onCadastrar" prefHeight="107.0" prefWidth="284.0" text="cadastre-se" />
-            <ImageView fitHeight="167.0" fitWidth="588.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Sem%20Título-1.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
+      <Pane layoutX="10.0" layoutY="10.0" />
+      <ImageView fitHeight="465.0" fitWidth="630.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../trueself.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnCadastro" layoutX="31.0" layoutY="282.0" mnemonicParsing="false" onAction="#onCadastrar" prefHeight="107.0" prefWidth="278.0" text="CADASTRE-SE" textFill="#111111">
+         <font>
+            <Font name="Eras Demi ITC" size="34.0" />
+         </font></Button>
+      <Button fx:id="btnLogin" layoutX="322.0" layoutY="281.0" mnemonicParsing="false" onAction="#onLogar" prefHeight="107.0" prefWidth="278.0" text="LOGIN" textFill="#ee0606">
+         <font>
+            <Font name="Eras Demi ITC" size="34.0" />
+         </font></Button>
    </children>
 </AnchorPane>

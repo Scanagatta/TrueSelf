@@ -35,7 +35,7 @@ public class TelaLoginController {
 	private static String dono;
 	
 	@FXML
-	void onEntar(ActionEvent event) {
+	void onEntrar(ActionEvent event) {
 		String login = tfLogin.getText();
 		String senha = pfSenha.getText();
 		Usuario usuario = SimuladorDB.getLogin(login);
