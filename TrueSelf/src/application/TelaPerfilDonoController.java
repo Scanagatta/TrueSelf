@@ -53,8 +53,8 @@ public class TelaPerfilDonoController {
 	    	tEstadoCivil.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getEstadoCivil());
 	    	tDataNascimento.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getDataNascimento().toString());
 	    	countAnjo.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
-	    	countDemonio.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
-	    	countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
+	    	countDemonio.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdDemonio().toString());
+	    	countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdNeutro().toString());
 	    }
 	    
 	    @FXML
