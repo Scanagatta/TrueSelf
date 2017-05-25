@@ -26,9 +26,12 @@ public class SimuladorDB {
 		atualizarUsuarios();
 	}
 	
+
+	
 	public static List<Usuario> getUsuarios() {
 		return usuarios;
 	}
+	
 	
 	public static Usuario getLogin(String login) {
 		for (Usuario usuario : usuarios) {

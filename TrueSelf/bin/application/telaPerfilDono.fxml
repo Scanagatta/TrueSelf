@@ -19,8 +19,8 @@
                   <Image url="@../../twice-tt-nayeon.jpg" />
                </image>
             </ImageView>
-            <Text fx:id="tNome" layoutX="211.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto" />
-            <Text fx:id="tEstadoCivil" layoutX="206.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EstadoCivil" />
+            <Text fx:id="tNome" layoutX="121.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto" />
+            <Text fx:id="tEstadoCivil" layoutX="262.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Idade" />
             <TableView fx:id="lvComentarios" layoutX="14.0" layoutY="137.0" prefHeight="204.0" prefWidth="504.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="Data" />
@@ -36,7 +36,7 @@
             <Button fx:id="btnAvaliacao" layoutX="274.0" layoutY="354.0" mnemonicParsing="false" text="ok" />
             <Button fx:id="btnSair" layoutX="527.0" layoutY="21.0" mnemonicParsing="false" onAction="#onSair" text="sair" />
             <Button fx:id="btnPesquisar" layoutX="458.0" layoutY="21.0" mnemonicParsing="false" onAction="#onPesquisar" text="pesquisar" />
-            <Text fx:id="tDataNascimento" layoutX="340.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DataNascimento" />
+            <Text fx:id="tDataNascimento" layoutX="340.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DataNascimento" />
             <ImageView fitHeight="55.0" fitWidth="236.0" layoutX="158.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Sem%20título-21.jpg" />
