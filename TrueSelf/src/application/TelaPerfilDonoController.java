@@ -4,6 +4,7 @@ package application;
 import java.io.IOException;
 
 import TrueSelf.modelo.SimuladorDB;
+import TrueSelf.modelo.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -60,8 +61,8 @@ public class TelaPerfilDonoController {
 		tEstadoCivil.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getEstadoCivil());
 		tDataNascimento.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getDataNascimento().toString());
 		countAnjo.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
-		countDemonio.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
-		countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
+		countDemonio.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdDemonio().toString());
+		countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdNeutro().toString());
 	}
 
 	@FXML
@@ -81,16 +82,15 @@ public class TelaPerfilDonoController {
 	@FXML
 	void onPesquisar(ActionEvent event) {
 		Stage stage = new Stage();
-		ComboBox<String> cmb = new ComboBox<>();
-		cmb.setTooltip(new Tooltip());
-		cmb.getItems().addAll(SimuladorDB.getUsuarios().toString());
-		stage.setScene(new Scene(new StackPane(cmb)));
-		stage.show();
-		stage.setTitle("Filtrando um ComboBox");
-		stage.setWidth(300);
-		stage.setHeight(300);
-		new PesquisaCombobox<String>(cmb);
-
+	   	 ComboBox<Usuario> cmb = new ComboBox<>();
+	   	 cmb.setTooltip(new Tooltip());
+	   	 cmb.getItems().addAll(SimuladorDB.getUsuarios());
+	   	 stage.setScene(new Scene(new StackPane(cmb)));
+	   	 stage.show();
+	   	 stage.setTitle("Filtrando um ComboBox");
+	   	 stage.setWidth(300);
+	   	 stage.setHeight(300);
+	   	 new PesquisaCombobox<Usuario>(cmb);
 	}
 
 }
