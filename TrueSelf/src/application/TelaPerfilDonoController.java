@@ -13,7 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 
-public class PerfilDonoController {
+public class TelaPerfilDonoController {
 	  @FXML
 	    private Pane cbxAvaliacao;
 
@@ -21,10 +21,10 @@ public class PerfilDonoController {
 	    private Text tNome;
 
 	    @FXML
-	    private Text tIdade;
+	    private Text tEstadoCivil;
 
 	    @FXML
-	    private TableView<?> lvComentarios;
+	    private TableView<String> lvComentarios;
 
 	    @FXML
 	    private Text countAnjo;
@@ -44,10 +44,14 @@ public class PerfilDonoController {
 	    @FXML
 	    private Button btnPesquisar;
 	    
+	    @FXML
+	    private Text tDataNascimento;
+	    
 	    public void initialize(){
 	    	SimuladorDB.getLogin(TelaLoginController.getDono());
 	    	tNome.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getNome());
-	    	//tIdade.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getIdade().toString());
+	    	tEstadoCivil.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getEstadoCivil());
+	    	tDataNascimento.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getDataNascimento().toString());
 	    	countAnjo.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
 	    	countDemonio.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
 	    	countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
@@ -69,8 +73,6 @@ public class PerfilDonoController {
 	    @FXML
 	    void onPesquisar(ActionEvent event){
 	    	//boa sorte joao
-	    	
-	    	// boa sorte tu kkk
 	    }
 	    
 	    
