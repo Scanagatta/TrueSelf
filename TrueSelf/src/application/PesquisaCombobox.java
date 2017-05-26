@@ -16,6 +16,7 @@ class PesquisaCombobox<T> {
 	private ComboBox<T> cmb;
 	String filter = "";
 	private ObservableList<T> originalItems;
+	
 
 	public PesquisaCombobox(ComboBox<T> cmb) {
 		this.cmb = cmb;
@@ -24,6 +25,8 @@ class PesquisaCombobox<T> {
 		cmb.setOnKeyPressed(this::handleOnKeyPressed);
 		cmb.setOnHidden(this::handleOnHiding);
 	}
+	
+
 
 	public void handleOnKeyPressed(KeyEvent e) {
 		ObservableList<T> filteredList = FXCollections.observableArrayList();

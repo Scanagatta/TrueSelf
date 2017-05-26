@@ -15,7 +15,6 @@ public class TelaPrincipalController {
     @FXML
     private BorderPane bpTela;
     
-    private static BorderPane bpTelaCompartilhada;
     
     public void initialize(){
 
