@@ -100,6 +100,7 @@ public class TelaPerfilDonoController {
 		
 		new PesquisaCombobox<Usuario>(cmb);
 		
+		
 		stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 			@Override
 			public void handle(WindowEvent t) {
