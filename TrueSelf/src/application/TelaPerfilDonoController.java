@@ -91,6 +91,7 @@ public class TelaPerfilDonoController {
 	   	 stage.setWidth(300);
 	   	 stage.setHeight(300);
 	   	 new PesquisaCombobox<Usuario>(cmb);
+	   	 //Levar para o perfil do usuario selecionado
 	}
 
 }

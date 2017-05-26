@@ -81,15 +81,24 @@ public class CadastroController {
 		usuario.setLogin(tfLogin.getText());
 		usuario.setEstadoCivil(cbEstadoCivil.getValue());
 		if (conferirSenha()) {
-			SimuladorDB.insert(usuario);
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("telaLogin.fxml"));
-			try {
-				AnchorPane loginView = (AnchorPane) loader.load();
-				TelaPrincipal.root.setCenter(loginView);
+			if (SimuladorDB.getLogin(tfLogin.getText()) == null) {
+				SimuladorDB.insert(usuario);
+				FXMLLoader loader = new FXMLLoader();
+				loader.setLocation(getClass().getResource("telaLogin.fxml"));
+				try {
+					AnchorPane loginView = (AnchorPane) loader.load();
+					TelaPrincipal.root.setCenter(loginView);
 
-			} catch (IOException e1) {
-				e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			} else {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Erro");
+				alert.setHeaderText("Ação inválida");
+				alert.setContentText("Login existente");
+				alert.showAndWait();
+				limparSenha();
 			}
 		}
 	}
