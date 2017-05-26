@@ -105,6 +105,8 @@ public class TelaPerfilDonoController {
 			public void handle(WindowEvent t) {
 				t.consume();
 
+				TelaPerfilVisitanteController.setUsuario(cmb.getValue());
+				
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
 				try {
