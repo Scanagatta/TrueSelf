@@ -2,9 +2,6 @@ package TrueSelf.modelo;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,7 +20,6 @@ public class Usuario implements Serializable {
 	private Integer qtdNeutro;
 	private Integer qtdDemonio;
 	private Integer qtdAnjo;
-	private List<String> comentario = new ArrayList<String>();
 	
 	@Override
 	public String toString() {
@@ -33,6 +29,7 @@ public class Usuario implements Serializable {
 
 
 	public Usuario() {
+		//inicializar as quantidades com zero, se n elas n aparecem
 		setQtdAnjo(0);
 		setQtdDemonio(0);
 		setQtdNeutro(0);
