@@ -90,8 +90,8 @@ public class TelaPerfilDonoController {
 		stage.show();
 		stage.setTitle("Pesquisa de usuário");
 		stage.setWidth(450);
-		stage.setHeight(100);
-		
+		stage.setHeight(100);		
+				  
 		Stage stage1 = new Stage();
 		Label label = new Label();
 		stage1.setScene(new Scene(new StackPane(label)));
