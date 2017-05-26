@@ -82,7 +82,7 @@ public class TelaPerfilDonoController {
 	@FXML
 	void onPesquisar(ActionEvent event) {
 		Stage stage = new Stage();
-		
+
 		ComboBox<Usuario> cmb = new ComboBox<>();
 		cmb.setTooltip(new Tooltip());
 		cmb.getItems().addAll(SimuladorDB.getUsuarios());
@@ -90,39 +90,58 @@ public class TelaPerfilDonoController {
 		stage.show();
 		stage.setTitle("Pesquisa de usuário");
 		stage.setWidth(450);
-		stage.setHeight(100);		
-				  
-		Stage stage1 = new Stage();
-		Label label = new Label();
-		stage1.setScene(new Scene(new StackPane(label)));
-		label.setText("Selecione um perfil e clique no [x]");
-		stage1.show();
-		
-		new PesquisaCombobox<Usuario>(cmb);
-		
-		
-		stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-			@Override
-			public void handle(WindowEvent t) {
-				t.consume();
+		stage.setHeight(100);
 
-				TelaPerfilVisitanteController.setUsuario(cmb.getValue());
-				
-				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
-				try {
-					AnchorPane loginView = (AnchorPane) loader.load();
-					TelaPrincipal.root.setCenter(loginView);
 
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
+		cmb.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
+			
+			TelaPerfilVisitanteController.setUsuario(cmb.getValue());
 
-				stage.close();
-				stage1.close();
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
+			try {
+				AnchorPane loginView = (AnchorPane) loader.load();
+				TelaPrincipal.root.setCenter(loginView);
 
+			} catch (IOException e1) {
+				e1.printStackTrace();
 			}
-		});
+			
+			new PesquisaCombobox<Usuario>(cmb);
+			stage.close();
+			
+		}
+
+		);
+		// Stage stage1 = new Stage();
+		// Label label = new Label();
+		// stage1.setScene(new Scene(new StackPane(label)));
+		// label.setText("Selecione um perfil e clique no [x]");
+		// stage1.show();
+
+		// new PesquisaCombobox<Usuario>(cmb);
+
+		// stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+		// @Override
+		// public void handle(WindowEvent t) {
+		// t.consume();
+		//
+		// TelaPerfilVisitanteController.setUsuario(cmb.getValue());
+		//
+		// FXMLLoader loader = new FXMLLoader();
+		// loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
+		// try {
+		// AnchorPane loginView = (AnchorPane) loader.load();
+		// TelaPrincipal.root.setCenter(loginView);
+		//
+		// } catch (IOException e1) {
+		// e1.printStackTrace();
+		// }
+		//
+		// stage1.close();
+		//
+		// }
+		// });
 
 	}
 
