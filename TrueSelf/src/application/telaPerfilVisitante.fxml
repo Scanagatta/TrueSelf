@@ -19,8 +19,8 @@
                   <Image url="@../large.fogo-agua.jpg.d0dfafac94815d89f656a7b3443d1d41.jpg" />
                </image>
             </ImageView>
-            <Text layoutX="211.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto" />
-            <Text layoutX="316.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Idade" />
+            <Text fx:id="tnome" layoutX="211.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto" />
+            <Text fx:id="tEstadoCivil" layoutX="211.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EstadoCivil" />
             <TableView layoutX="38.0" layoutY="157.0" prefHeight="143.0" prefWidth="504.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="Data" />
@@ -36,6 +36,7 @@
             <Button layoutX="346.0" layoutY="348.0" mnemonicParsing="false" text="postar" />
             <Button layoutX="542.0" layoutY="29.0" mnemonicParsing="false" text="sair" />
             <Button layoutX="478.0" layoutY="29.0" mnemonicParsing="false" text="perfil" />
+            <Text fx:id="tDataNascimento" layoutX="367.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EstadoCivil" />
          </children>
       </Pane>
    </children>

@@ -5,6 +5,8 @@ import TrueSelf.modelo.Usuario;
 public class TelaPerfilVisitanteController {
 	
 	private static Usuario usuario;
+	
+	
 
 	public static Usuario getUsuario() {
 		 return usuario = usuario;
