@@ -36,8 +36,7 @@ public class TelaLoginController {
 	@FXML
 	void onEntrar(ActionEvent event) {
 		
-		// eu não mechi aqui, mas quando clica pra esntrar ta dando um erro
-		// mas ta entrando, nao sei oq tem
+
 		
 		String login = tfLogin.getText();
 		String senha = pfSenha.getText();

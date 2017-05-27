@@ -89,14 +89,21 @@ public class TelaPerfilDonoController {
 		stage.setScene(new Scene(new StackPane(cmb)));
 		stage.show();
 		stage.setTitle("Pesquisa de usuário");
-		stage.setWidth(450);
+		stage.setWidth(300);
 		stage.setHeight(100);
 		new PesquisaCombobox<Usuario>(cmb);
 
 		cmb.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
 			event.consume();
-			TelaPerfilVisitanteController.setUsuario(cmb.getValue());
+			
+			
+			
+		TelaPerfilVisitanteController.setUsuario(cmb.getValue());
+		
+		
 
+			stage.close();
+			
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
 			try {
@@ -108,7 +115,6 @@ public class TelaPerfilDonoController {
 			}
 			
 			
-			stage.close();
 			
 		}
 

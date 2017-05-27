@@ -2,13 +2,23 @@ package application;
 
 import java.io.IOException;
 
+import org.omg.CORBA.Environment;
+
+import TrueSelf.modelo.SimuladorDB;
+import TrueSelf.modelo.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 public class TelaPrimeiraController {
 
@@ -23,15 +33,21 @@ public class TelaPrimeiraController {
     
     private static BorderPane bpTelaCompartilhada;
     
-    public void initialize(){
-    
-    	
-    }
-    
-    
+      
     
     @FXML
     void onCadastrar(ActionEvent event) {
+		Stage stage = new Stage();
+
+		Label texto = new Label();
+		texto.setTooltip(new Tooltip());
+		stage.setScene(new Scene(new StackPane(texto)));
+		stage.setTitle("Importante");
+		texto.setText("True self é uma espécie de rede social offline");
+		stage.setWidth(300);
+		stage.setHeight(300);
+		stage.show();
+		
     	FXMLLoader loader = new FXMLLoader();
     	loader.setLocation(getClass().getResource("telaCadastro.fxml"));
     	try{
