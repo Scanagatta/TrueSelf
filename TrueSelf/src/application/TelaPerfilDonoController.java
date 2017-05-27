@@ -91,7 +91,7 @@ public class TelaPerfilDonoController {
 		stage.setTitle("Pesquisa de usuário");
 		stage.setWidth(450);
 		stage.setHeight(100);
-
+		new PesquisaCombobox<Usuario>(cmb);
 
 		cmb.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
 			
@@ -107,7 +107,7 @@ public class TelaPerfilDonoController {
 				e1.printStackTrace();
 			}
 			
-			new PesquisaCombobox<Usuario>(cmb);
+			
 			stage.close();
 			
 		}
