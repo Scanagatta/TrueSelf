@@ -79,7 +79,8 @@ public class TelaLoginController {
 	}
 
 	public void setDono(String dono) {
-		this.dono = dono;
+		TelaLoginController.dono = dono;
+		//this.dono = dono;
 	}
 
 }

@@ -6,13 +6,11 @@ import java.io.IOException;
 import TrueSelf.modelo.SimuladorDB;
 import TrueSelf.modelo.Usuario;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
@@ -20,7 +18,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 public class TelaPerfilDonoController {
 	@FXML
@@ -66,6 +63,11 @@ public class TelaPerfilDonoController {
 		countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdNeutro().toString());
 	}
 
+	/**
+	 * é o botao da tela de visitante para voltar pro perfil do dono
+	 * 
+	 * @param event
+	 */
 	@FXML
 	void onSair(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
@@ -79,31 +81,48 @@ public class TelaPerfilDonoController {
 		}
 	}
 
+	/**
+	 * é o botao de pesquisa dessa tela TelaPerfilDonoController
+	 * 
+	 * @param event
+	 */
 	@FXML
 	void onPesquisar(final ActionEvent event) {
+		// cria stage é uma janelinha
 		Stage stage = new Stage();
 
+		// cria um combobox que vai ser colocado dentro do stage
 		ComboBox<Usuario> cmb = new ComboBox<>();
 		cmb.setTooltip(new Tooltip());
+
+		// no combobox vai conter os usuarios que tao no simuladorBD
 		cmb.getItems().addAll(SimuladorDB.getUsuarios());
 		stage.setScene(new Scene(new StackPane(cmb)));
+
+		// mostra o stage, como seu titulo, e tamanho
 		stage.show();
 		stage.setTitle("Digite o nome do usuário desejado");
 		stage.setWidth(400);
 		stage.setHeight(100);
+
+		// ele da um new pegando daquela classe que faz a pesquisa letra por
+		// letra,
+		// sem essa linha a pesquisa de letras não funciona
 		new PesquisaCombobox<Usuario>(cmb);
 
+		// com esse comando ele pega o click do mouse no combobox e executa as
+		// ações abaixo
 		cmb.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
+			// ele consome o evento (pesquisar)
 			event.consume();
-			
-			
-			
-		TelaPerfilVisitanteController.setUsuario(cmb.getValue());
-		
-		
 
+			// pega o usuario do combobox e salva lá na outra classe
+			TelaPerfilVisitanteController.setUsuario(cmb.getValue());
+
+			// fecha o stage (telinha)
 			stage.close();
-			
+
+			// carrega outra tela
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
 			try {
@@ -113,19 +132,10 @@ public class TelaPerfilDonoController {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-			
-			
-			
+
 		}
 
 		);
-		// Stage stage1 = new Stage();
-		// Label label = new Label();
-		// stage1.setScene(new Scene(new StackPane(label)));
-		// label.setText("Selecione um perfil e clique no [x]");
-		// stage1.show();
-
-		// new PesquisaCombobox<Usuario>(cmb);
 
 		// stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 		// @Override

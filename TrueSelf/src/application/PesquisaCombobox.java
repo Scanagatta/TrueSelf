@@ -4,7 +4,6 @@ import java.util.stream.Stream;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.Event;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyCode;

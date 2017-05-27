@@ -2,7 +2,6 @@ package application;
 
 import java.io.IOException;
 
-import TrueSelf.modelo.SimuladorDB;
 import TrueSelf.modelo.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -37,20 +36,8 @@ public class TelaPerfilVisitanteController {
 	@FXML
 	private Text tDataNascimento;
 
-	
-	private static String visitado;
-	
-	public static String getVisitado() {
-		return visitado;
-	}
-
-	public void setVisitado(String dono) {
-		this.visitado = visitado;
-	}
-	
 	private static Usuario usuario;
-	
-	
+
 	public static Usuario getUsuario() {
 		return usuario;
 	}
@@ -60,16 +47,24 @@ public class TelaPerfilVisitanteController {
 	}
 
 	public void initialize() {
-		
-		
+
+		// ele ta inicializando com o usuario que foi pego no combobox do metodo
+		// onPesquisar
+		// da classse TelaPerfilDonoController
+
 		tnome.setText(getUsuario().getNome());
 		tEstadoCivil.setText(getUsuario().getEstadoCivil());
 		tDataNascimento.setText(getUsuario().getDataNascimento().toString());
 		countAnjo.setText(getUsuario().getQtdAnjo().toString());
 		countDemonio.setText(getUsuario().getQtdDemonio().toString());
 		countNeutro.setText(getUsuario().getQtdNeutro().toString());
-		}
-	
+	}
+
+	/**
+	 * é o botao da tela de visitante para voltar pro perfil do dono
+	 * 
+	 * @param event
+	 */
 	@FXML
 	void onPerfil(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
@@ -83,6 +78,11 @@ public class TelaPerfilVisitanteController {
 		}
 	}
 
+	/**
+	 * é o botao da tela de visitante para sair, volta para tela inicial
+	 * 
+	 * @param event
+	 */
 	@FXML
 	void onSair(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();

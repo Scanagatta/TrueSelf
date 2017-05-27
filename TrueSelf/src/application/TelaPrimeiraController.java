@@ -2,17 +2,12 @@ package application;
 
 import java.io.IOException;
 
-import org.omg.CORBA.Environment;
-
-import TrueSelf.modelo.SimuladorDB;
-import TrueSelf.modelo.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;

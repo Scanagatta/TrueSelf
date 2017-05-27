@@ -16,8 +16,15 @@ public class Comentario implements Serializable {
 	// usuario que recebe a mensagem
 	private Usuario usuarioRecebe;
 	
+	/**
+	 * metodo para fazer salvar os comentarios e quem os fez e recebeu
+	 * 
+	 * @param usuarioRecebe
+	 * @param usuarioEnvia
+	 * @param comentario
+	 * @return
+	 */
 	public String comentar(Usuario usuarioRecebe, Usuario usuarioEnvia, String comentario){
-		//metodo para fazer salvar os comentarios e quem os fez e recebeu
 		this.usuarioRecebe = usuarioRecebe;
 		this.usuarioEnvia = usuarioEnvia;
 		return comentario;
