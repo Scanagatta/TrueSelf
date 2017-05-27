@@ -16,18 +16,21 @@ class PesquisaCombobox<T> {
 	private ComboBox<T> cmb;
 	String filter = "";
 	private ObservableList<T> originalItems;
-	
 
 	public PesquisaCombobox(ComboBox<T> cmb) {
 		this.cmb = cmb;
 		originalItems = FXCollections.observableArrayList(cmb.getItems());
 		cmb.setTooltip(new Tooltip());
 		cmb.setOnKeyPressed(this::handleOnKeyPressed);
-		cmb.setOnHidden(this::handleOnHiding);
+		// comentado conforme observação no método referente
+		// cmb.setOnHidden(this::handleOnHiding);
 	}
-	
 
-
+	/**
+	 * Tratador de evento para a pesquisa do combobox.
+	 * 
+	 * @param e
+	 */
 	public void handleOnKeyPressed(KeyEvent e) {
 		ObservableList<T> filteredList = FXCollections.observableArrayList();
 		KeyCode code = e.getCode();
@@ -58,12 +61,16 @@ class PesquisaCombobox<T> {
 		}
 		cmb.getItems().setAll(filteredList);
 	}
-
-	public void handleOnHiding(Event e) {
-		filter = "";
-		cmb.getTooltip().hide();
-		T s = cmb.getSelectionModel().getSelectedItem();
-		cmb.getItems().setAll(originalItems);
-		cmb.getSelectionModel().select(s);
-}
+	/**
+	 * Método handler para quando ocorre o hidding do combobox. Comentado pois
+	 * causava erro e não sentimos a sua falta quando não executou.
+	 */
+	// public void handleOnHiding(Event e) {
+	// filter = "";
+	// cmb.getTooltip().hide();
+	// T s = cmb.getSelectionModel().getSelectedItem();
+	// cmb.getItems().setAll(originalItems);
+	// cmb.getSelectionModel().select(s);
+	// e.consume();
+	// }
 }

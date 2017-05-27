@@ -80,7 +80,7 @@ public class TelaPerfilDonoController {
 	}
 
 	@FXML
-	void onPesquisar(ActionEvent event) {
+	void onPesquisar(final ActionEvent event) {
 		Stage stage = new Stage();
 
 		ComboBox<Usuario> cmb = new ComboBox<>();
@@ -94,7 +94,7 @@ public class TelaPerfilDonoController {
 		new PesquisaCombobox<Usuario>(cmb);
 
 		cmb.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
-			
+			event.consume();
 			TelaPerfilVisitanteController.setUsuario(cmb.getValue());
 
 			FXMLLoader loader = new FXMLLoader();
