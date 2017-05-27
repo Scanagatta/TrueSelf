@@ -62,18 +62,12 @@ public class TelaPerfilVisitanteController {
 	public void initialize() {
 		
 		
-//		String login = usuario.getLogin();
-//		usuario = SimuladorDB.getLogin(login);
-//		setVisitado(login);
-//		
-//		SimuladorDB.getLogin(getVisitado());
-//		tnome.setText(SimuladorDB.getLogin(getVisitado()).getNome());
-//		tEstadoCivil.setText(SimuladorDB.getLogin(getVisitado()).getEstadoCivil());
-//		tDataNascimento.setText(SimuladorDB.getLogin(getVisitado()).getDataNascimento().toString());
-//		countAnjo.setText(SimuladorDB.getLogin(getVisitado()).getQtdAnjo().toString());
-//		countDemonio.setText(SimuladorDB.getLogin(getVisitado()).getQtdDemonio().toString());
-//		countNeutro.setText(SimuladorDB.getLogin(getVisitado()).getQtdNeutro().toString());
-//		
+		tnome.setText(getUsuario().getNome());
+		tEstadoCivil.setText(getUsuario().getEstadoCivil());
+		tDataNascimento.setText(getUsuario().getDataNascimento().toString());
+		countAnjo.setText(getUsuario().getQtdAnjo().toString());
+		countDemonio.setText(getUsuario().getQtdDemonio().toString());
+		countNeutro.setText(getUsuario().getQtdNeutro().toString());
 		}
 	
 	@FXML

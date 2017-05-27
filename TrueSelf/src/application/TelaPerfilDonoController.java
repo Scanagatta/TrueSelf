@@ -88,8 +88,8 @@ public class TelaPerfilDonoController {
 		cmb.getItems().addAll(SimuladorDB.getUsuarios());
 		stage.setScene(new Scene(new StackPane(cmb)));
 		stage.show();
-		stage.setTitle("Pesquisa de usuário");
-		stage.setWidth(300);
+		stage.setTitle("Digite o nome do usuário desejado");
+		stage.setWidth(400);
 		stage.setHeight(100);
 		new PesquisaCombobox<Usuario>(cmb);
 
