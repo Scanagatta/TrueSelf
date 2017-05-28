@@ -2,6 +2,8 @@
 package application;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Arrays;
 
 import TrueSelf.modelo.SimuladorDB;
 import TrueSelf.modelo.Usuario;
@@ -13,6 +15,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -21,7 +25,7 @@ import javafx.stage.Stage;
 
 public class TelaPerfilDonoController {
 	@FXML
-	private Pane cbxAvaliacao;
+	private Pane pane;
 
 	@FXML
 	private Text tNome;
@@ -53,6 +57,9 @@ public class TelaPerfilDonoController {
 	@FXML
 	private Text tDataNascimento;
 
+	@FXML
+	private ComboBox<ImageView> cbxAvaliacao;
+
 	public void initialize() {
 		SimuladorDB.getLogin(TelaLoginController.getDono());
 		tNome.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getNome());
@@ -61,6 +68,17 @@ public class TelaPerfilDonoController {
 		countAnjo.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
 		countDemonio.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdDemonio().toString());
 		countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdNeutro().toString());
+		for(String img:  Arrays.asList("image.png","image2.jpg","image3.jpg")){
+			  //encontra o lugar onde esta a imagem
+			  InputStream input = TelaPerfilDonoController.class.getResourceAsStream(img);
+			  //coloca a imagem em um image
+			  Image imagem = new Image(input);
+			  //coloca o image no imageView
+			  ImageView icone = new ImageView();
+			  icone.setImage(imagem);
+			  //coloca o image view no combobox
+			  cbxAvaliacao.getItems().addAll(icone);
+		  }
 	}
 
 	/**

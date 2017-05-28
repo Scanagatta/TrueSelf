@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPerfilDonoController">
    <children>
-      <Pane fx:id="cbxAvaliacao" prefHeight="400.0" prefWidth="600.0">
+      <Pane fx:id="pane" prefHeight="400.0" prefWidth="600.0">
          <children>
             <ImageView fitHeight="86.0" fitWidth="75.0" layoutX="7.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -31,7 +31,7 @@
             <Text fx:id="countAnjo" layoutX="212.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo" />
             <Text fx:id="countDemonio" layoutX="370.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio" />
             <Text fx:id="countNeutro" layoutX="527.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro" />
-            <ComboBox layoutX="83.0" layoutY="354.0" prefWidth="150.0" />
+            <ComboBox fx:id="cbxAvaliacao" layoutX="83.0" layoutY="354.0" prefWidth="150.0" />
             <Text layoutX="34.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avaliar" />
             <Button fx:id="btnAvaliacao" layoutX="274.0" layoutY="354.0" mnemonicParsing="false" text="ok" />
             <Button fx:id="btnSair" layoutX="527.0" layoutY="21.0" mnemonicParsing="false" onAction="#onSair" text="sair" />
