@@ -1,6 +1,7 @@
 package TrueSelf.modelo;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,8 @@ public class Comentario implements Serializable {
 	private Usuario usuarioEnvia;
 	// usuario que recebe a mensagem
 	private Usuario usuarioRecebe;
+	
+	private LocalDate data;
 	
 	/**
 	 * metodo para fazer salvar os comentarios e quem os fez e recebeu
