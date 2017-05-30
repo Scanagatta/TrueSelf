@@ -30,7 +30,7 @@
 				</TableView>
 				<Text fx:id="countAnjo" layoutX="255.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo" />
             <Text fx:id="countDemonio" layoutX="388.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio" />
-            <Text fx:id="countNeutro" layoutX="542.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro" />
+            <Text fx:id="countNeutro" layoutX="527.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro" />
 				<ComboBox fx:id="cbxAvaliacao" layoutX="83.0" layoutY="354.0" prefWidth="150.0" />
 				<Text layoutX="34.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avaliar" />
 				<Button fx:id="btnAvaliacao" layoutX="274.0" layoutY="354.0" mnemonicParsing="false" text="ok" />
