@@ -1,8 +1,10 @@
 package application;
 
-import java.awt.TextArea;
-import java.io.IOException;
 
+import java.io.IOException;
+import java.time.LocalDate;
+
+import TrueSelf.modelo.Comentario;
 import TrueSelf.modelo.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +12,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
@@ -40,16 +44,16 @@ public class TelaPerfilVisitanteController {
 	private Text tDataNascimento;
 	
 	@FXML
-    private TableView<?> tblComentarios;
+    private TableView<Comentario> tblComentarios;
 
     @FXML
-    private TableColumn<?, ?> cData;
+    private TableColumn<Comentario, LocalDate> cData;
 
     @FXML
-    private TableColumn<?, ?> cComentario;
+    private TableColumn<Comentario, String> cComentario;
 
     @FXML
-    private TableColumn<?, ?> cClassificacao;
+    private TableColumn<Comentario, ImageView> cClassificacao;
     
     @FXML
     private TextArea taComentario;
