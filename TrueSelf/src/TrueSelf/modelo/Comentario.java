@@ -27,10 +27,11 @@ public class Comentario implements Serializable {
 	 * @param comentario
 	 * @return
 	 */
-	public String comentar(Usuario usuarioRecebe, Usuario usuarioEnvia, String comentario){
+	public void comentar(Usuario usuarioRecebe, Usuario usuarioEnvia, String comentario){
 		this.usuarioRecebe = usuarioRecebe;
 		this.usuarioEnvia = usuarioEnvia;
-		return comentario;
+		this.comentario = comentario;
+		//data = data.getChronology().dateNow();
 	}
 	
 	@Override

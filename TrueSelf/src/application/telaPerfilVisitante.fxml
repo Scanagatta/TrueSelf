@@ -33,7 +33,7 @@
             <Text fx:id="countNeutro" layoutX="542.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro" />
             <Text layoutX="35.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comentário" />
             <TextArea fx:id="taComentario" layoutX="102.0" layoutY="316.0" prefHeight="70.0" prefWidth="200.0" />
-            <Button fx:id="btnPostar" layoutX="346.0" layoutY="348.0" mnemonicParsing="false" text="postar" />
+            <Button fx:id="btnPostar" layoutX="346.0" layoutY="348.0" mnemonicParsing="false" onAction="#onPostar" text="postar" />
             <Button fx:id="btnsair" layoutX="542.0" layoutY="29.0" mnemonicParsing="false" onAction="#onSair" text="sair" />
             <Button fx:id="btnperfil" layoutX="478.0" layoutY="29.0" mnemonicParsing="false" onAction="#onPerfil" text="perfil" />
             <Text fx:id="tDataNascimento" layoutX="367.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DataNascimento" />
