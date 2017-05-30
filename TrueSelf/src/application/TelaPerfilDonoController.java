@@ -21,6 +21,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class TelaPerfilDonoController {
@@ -68,17 +69,17 @@ public class TelaPerfilDonoController {
 		countAnjo.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
 		countDemonio.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdDemonio().toString());
 		countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdNeutro().toString());
-		for(String img:  Arrays.asList("image.png","image2.jpg","image3.jpg")){
-			  //encontra o lugar onde esta a imagem
-			  InputStream input = TelaPerfilDonoController.class.getResourceAsStream(img);
-			  //coloca a imagem em um image
-			  Image imagem = new Image(input);
-			  //coloca o image no imageView
-			  ImageView icone = new ImageView();
-			  icone.setImage(imagem);
-			  //coloca o image view no combobox
-			  cbxAvaliacao.getItems().addAll(icone);
-		  }
+		for (String img : Arrays.asList("image.png", "image2.jpg", "image3.jpg")) {
+			// encontra o lugar onde esta a imagem
+			InputStream input = TelaPerfilDonoController.class.getResourceAsStream(img);
+			// coloca a imagem em um image
+			Image imagem = new Image(input);
+			// coloca o image no imageView
+			ImageView icone = new ImageView();
+			icone.setImage(imagem);
+			// coloca o image view no combobox
+			cbxAvaliacao.getItems().addAll(icone);
+		}
 	}
 
 	/**
@@ -106,77 +107,85 @@ public class TelaPerfilDonoController {
 	 */
 	@FXML
 	void onPesquisar(final ActionEvent event) {
-		// cria stage é uma janelinha
-		Stage stage = new Stage();
 
-		// cria um combobox que vai ser colocado dentro do stage
-		ComboBox<Usuario> cmb = new ComboBox<>();
-		cmb.setTooltip(new Tooltip());
 
-		// no combobox vai conter os usuarios que tao no simuladorBD
-		cmb.getItems().addAll(SimuladorDB.getUsuarios());
-		stage.setScene(new Scene(new StackPane(cmb)));
+			// cria stage é uma janelinha
+			Stage stage = new Stage();
 
-		// mostra o stage, como seu titulo, e tamanho
-		stage.show();
-		stage.setTitle("Digite o nome do usuário desejado");
-		stage.setWidth(400);
-		stage.setHeight(100);
+			// cria um combobox que vai ser colocado dentro do stage
+			ComboBox<Usuario> cmb = new ComboBox<>();
+			cmb.setTooltip(new Tooltip());
 
-		// ele da um new pegando daquela classe que faz a pesquisa letra por
-		// letra,
-		// sem essa linha a pesquisa de letras não funciona
-		new PesquisaCombobox<Usuario>(cmb);
+			// no combobox vai conter os usuarios que tao no simuladorBD
+			cmb.getItems().addAll(SimuladorDB.getUsuarios());
+			stage.setScene(new Scene(new StackPane(cmb)));
 
-		// com esse comando ele pega o click do mouse no combobox e executa as
-		// ações abaixo
-		cmb.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
-			// ele consome o evento (pesquisar)
-			event.consume();
+			// mostra o stage, como seu titulo, e tamanho
+			
+			stage.setTitle("Digite o nome do usuário desejado");
+			stage.setWidth(400);
+			stage.setHeight(100);
+			stage.initModality(Modality.WINDOW_MODAL);
+			stage.show();
+			// ele da um new pegando daquela classe que faz a pesquisa letra por
+			// letra,
+			// sem essa linha a pesquisa de letras não funciona
+			new PesquisaCombobox<Usuario>(cmb);
 
-			// pega o usuario do combobox e salva lá na outra classe
-			TelaPerfilVisitanteController.setUsuario(cmb.getValue());
+			// com esse comando ele pega o click do mouse no combobox e executa
+			// as
+			// ações abaixo
+			cmb.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
+				// ele consome o evento (pesquisar)
+				event.consume();
 
-			// fecha o stage (telinha)
-			stage.close();
+				// pega o usuario do combobox e salva lá na outra classe
+				TelaPerfilVisitanteController.setUsuario(cmb.getValue());
 
-			// carrega outra tela
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
-			try {
-				AnchorPane loginView = (AnchorPane) loader.load();
-				TelaPrincipal.root.setCenter(loginView);
+				// fecha o stage (telinha)
+				stage.close();
+				
 
-			} catch (IOException e1) {
-				e1.printStackTrace();
+
+				// carrega outra tela
+				FXMLLoader loader = new FXMLLoader();
+				loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
+				try {
+					AnchorPane loginView = (AnchorPane) loader.load();
+					TelaPrincipal.root.setCenter(loginView);
+
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+
 			}
+
+			);
+			
 
 		}
 
-		);
-
-		// stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-		// @Override
-		// public void handle(WindowEvent t) {
-		// t.consume();
-		//
-		// TelaPerfilVisitanteController.setUsuario(cmb.getValue());
-		//
-		// FXMLLoader loader = new FXMLLoader();
-		// loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
-		// try {
-		// AnchorPane loginView = (AnchorPane) loader.load();
-		// TelaPrincipal.root.setCenter(loginView);
-		//
-		// } catch (IOException e1) {
-		// e1.printStackTrace();
-		// }
-		//
-		// stage1.close();
-		//
-		// }
-		// });
 
 	}
+	// stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+	// @Override
+	// public void handle(WindowEvent t) {
+	// t.consume();
+	//
+	// TelaPerfilVisitanteController.setUsuario(cmb.getValue());
+	//
+	// FXMLLoader loader = new FXMLLoader();
+	// loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
+	// try {
+	// AnchorPane loginView = (AnchorPane) loader.load();
+	// TelaPrincipal.root.setCenter(loginView);
+	//
+	// } catch (IOException e1) {
+	// e1.printStackTrace();
+	// }
+	//
+	// stage1.close();
+	//
+	// }
+	// });
 
-}

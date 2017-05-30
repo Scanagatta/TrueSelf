@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -26,19 +27,19 @@ public class TelaPrimeiraController {
     @FXML
     private BorderPane bpTela;
     
-    private static BorderPane bpTelaCompartilhada;
+  
     
-      
+     
     
     @FXML
     void onCadastrar(ActionEvent event) {
 		Stage stage = new Stage();
 
-		Label texto = new Label();
+		TextArea texto = new TextArea();
 		texto.setTooltip(new Tooltip());
 		stage.setScene(new Scene(new StackPane(texto)));
 		stage.setTitle("Importante");
-		texto.setText("True self é uma espécie de rede social offline");
+		texto.setText("True self é uma espécie de rede social offline\ntudo bem com vcs");
 		stage.setWidth(300);
 		stage.setHeight(300);
 		stage.show();
@@ -55,9 +56,7 @@ public class TelaPrimeiraController {
 
     }
     
-    public static void trocarTela(Node tela){
-    	bpTelaCompartilhada.setCenter(tela);
-    }
+
 
     @FXML
     void onLogar(ActionEvent event) {
