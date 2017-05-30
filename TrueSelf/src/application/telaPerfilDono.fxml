@@ -21,10 +21,10 @@
 				</ImageView>
 				 <Text fx:id="tNome" layoutX="208.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto" />
             <Text fx:id="tEstadoCivil" layoutX="208.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EstadoCivil" />
-				<TableView fx:id="lvComentarios" layoutX="14.0" layoutY="137.0" prefHeight="204.0" prefWidth="504.0">
+				<TableView fx:id="tblComentarios" layoutX="14.0" layoutY="137.0" prefHeight="204.0" prefWidth="504.0">
 					<columns>
-						<TableColumn prefWidth="75.0" text="Data" />
-						<TableColumn prefWidth="340.0" text="Comentario" />
+						<TableColumn fx:id="cData" prefWidth="75.0" text="Data" />
+						<TableColumn fx:id="cComentario" prefWidth="340.0" text="Comentario" />
 						<TableColumn minWidth="0.0" prefWidth="76.0" text="Classificação" />
 					</columns>
 				</TableView>

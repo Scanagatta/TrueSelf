@@ -132,10 +132,11 @@ public class TelaPerfilVisitanteController {
 
     @FXML
     void onPostar(ActionEvent event) {
-    	novo();
     	comentario.comentar(usuario, SimuladorDB.getLogin(TelaLoginController.getDono()), taComentario.getText());
     	SimuladorDB.insert(comentario);
     	tblComentarios.getItems().add(comentario);
+    	tblComentarios.refresh();
+    	novo();
     }
     
     private void novo(){

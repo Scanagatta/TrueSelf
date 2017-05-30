@@ -3,10 +3,13 @@ package application;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.LocalDate;
 import java.util.Arrays;
 
+import TrueSelf.modelo.Comentario;
 import TrueSelf.modelo.SimuladorDB;
 import TrueSelf.modelo.Usuario;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +18,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -57,6 +62,18 @@ public class TelaPerfilDonoController {
 
 	@FXML
 	private Text tDataNascimento;
+	
+	@FXML
+    private TableView<Comentario> tblComentarios;
+
+    @FXML
+    private TableColumn<Comentario, LocalDate> cData;
+
+    @FXML
+    private TableColumn<Comentario, String> cComentario;
+
+    @FXML
+    private TableColumn<Comentario, ImageView> cClassificacao;
 
 	@FXML
 	private ComboBox<ImageView> cbxAvaliacao;
@@ -80,6 +97,10 @@ public class TelaPerfilDonoController {
 			// coloca o image view no combobox
 			cbxAvaliacao.getItems().addAll(icone);
 		}
+		
+		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
+    	cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
+		tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getComentarios()));
 	}
 
 	/**
