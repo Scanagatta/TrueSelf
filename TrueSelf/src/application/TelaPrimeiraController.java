@@ -14,6 +14,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class TelaPrimeiraController {
@@ -35,12 +36,14 @@ public class TelaPrimeiraController {
     void onCadastrar(ActionEvent event) {
 		Stage stage = new Stage();
 
-		TextArea texto = new TextArea();
-		texto.setTooltip(new Tooltip());
+		Text texto = new Text();
 		stage.setScene(new Scene(new StackPane(texto)));
 		stage.setTitle("Importante");
-		texto.setText("True self é uma espécie de rede social offline\ntudo bem com vcs");
-		stage.setWidth(300);
+		texto.setText("True self é uma espécie de rede social offline\n\n\nCriado com o intuito de as pessoas"
+				+ " interagirem\nentre elas, dando sua opinião uma sobre a outra\n\nDesenvolvido por acadêmicos da UNOESC- Xanxerê\n"
+				+ "do curso de Tecnologia em Análise e Desenvolvimento\nde Sistemas - 3ª fase\n\n\n\n\n TrueSelf® 2017");
+
+		stage.setWidth(390);
 		stage.setHeight(300);
 		stage.show();
 		

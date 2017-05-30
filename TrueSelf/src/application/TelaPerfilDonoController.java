@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
@@ -114,18 +115,25 @@ public class TelaPerfilDonoController {
 
 			// cria um combobox que vai ser colocado dentro do stage
 			ComboBox<Usuario> cmb = new ComboBox<>();
-			cmb.setTooltip(new Tooltip());
+			
+			Label texto = new Label("Digite o nome do usuário que deseja buscar");
 
+			
+			cmb.setTooltip(new Tooltip());
+			
+		
 			// no combobox vai conter os usuarios que tao no simuladorBD
 			cmb.getItems().addAll(SimuladorDB.getUsuarios());
-			stage.setScene(new Scene(new StackPane(cmb)));
+			stage.setScene(new Scene(new StackPane(cmb, texto)));
+			
+			cmb.setMaxWidth(300);
+			
 
 			// mostra o stage, como seu titulo, e tamanho
 			
-			stage.setTitle("Digite o nome do usuário desejado");
+			stage.setTitle("Pesquisa de perfil");
 			stage.setWidth(400);
-			stage.setHeight(100);
-			stage.initModality(Modality.WINDOW_MODAL);
+			stage.setHeight(150);
 			stage.show();
 			// ele da um new pegando daquela classe que faz a pesquisa letra por
 			// letra,
