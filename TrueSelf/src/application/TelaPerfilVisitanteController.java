@@ -87,9 +87,13 @@ public class TelaPerfilVisitanteController {
 		countAnjo.setText(getUsuario().getQtdAnjo().toString());
 		countDemonio.setText(getUsuario().getQtdDemonio().toString());
 		countNeutro.setText(getUsuario().getQtdNeutro().toString());
+		
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
     	cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
 		tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getComentarios()));
+		
+		//tblComentarios.setItems(FXCollections.observableArrayList(getUsuario().getComentarios()));
+
 		novo();
 	}
 
