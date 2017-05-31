@@ -9,7 +9,6 @@ import java.util.Arrays;
 import TrueSelf.modelo.Comentario;
 import TrueSelf.modelo.SimuladorDB;
 import TrueSelf.modelo.Usuario;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -100,7 +99,7 @@ public class TelaPerfilDonoController {
 		
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
     	cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
-		tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getLogin(TelaLoginController.getDono()).getComentarios()));
+		
 		
 	}
 

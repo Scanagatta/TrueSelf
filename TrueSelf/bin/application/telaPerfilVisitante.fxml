@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -8,51 +9,82 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPerfilVisitanteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPerfilVisitanteController">
    <children>
-      <Pane prefHeight="400.0" prefWidth="600.0">
+      <Pane prefHeight="460.0" prefWidth="600.0">
          <children>
             <ImageView fitHeight="100.0" fitWidth="172.0" layoutX="3.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../bfbfb944a9c2dcba437f8fd31d7c19122473aa36_hq.jpg" />
                </image>
             </ImageView>
-            <Text fx:id="tnome" layoutX="211.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto" />
-            <Text fx:id="tEstadoCivil" layoutX="211.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EstadoCivil" />
-            <TableView fx:id="tblComentarios" layoutX="38.0" layoutY="157.0" prefHeight="143.0" prefWidth="504.0">
+            <TableView fx:id="tblComentarios" layoutX="14.0" layoutY="182.0" prefHeight="182.0" prefWidth="573.0">
               <columns>
                 <TableColumn fx:id="cData" prefWidth="75.0" text="Data" />
-                <TableColumn fx:id="cComentario" prefWidth="340.0" text="Comentario" />
-                  <TableColumn fx:id="cClassificacao" minWidth="0.0" prefWidth="76.0" text="Classificação" />
+                <TableColumn fx:id="cComentario" prefWidth="404.0" text="Comentario" />
+                  <TableColumn fx:id="cClassificacao" minWidth="0.0" prefWidth="90.0" text="Classificação" />
               </columns>
             </TableView>
-            <Text fx:id="countAnjo" layoutX="255.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo" />
-            <Text fx:id="countDemonio" layoutX="388.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio" />
-            <Text fx:id="countNeutro" layoutX="542.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro" />
-            <Text layoutX="35.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comentário" />
-            <TextArea fx:id="taComentario" layoutX="102.0" layoutY="316.0" prefHeight="70.0" prefWidth="200.0" />
-            <Button fx:id="btnPostar" layoutX="346.0" layoutY="348.0" mnemonicParsing="false" onAction="#onPostar" text="postar" />
-            <Button fx:id="btnsair" layoutX="542.0" layoutY="29.0" mnemonicParsing="false" onAction="#onSair" text="sair" />
-            <Button fx:id="btnperfil" layoutX="478.0" layoutY="29.0" mnemonicParsing="false" onAction="#onPerfil" text="perfil" />
-            <Text fx:id="tDataNascimento" layoutX="367.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DataNascimento" />
-            <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="468.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+            <Text layoutX="39.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comentário" />
+            <TextArea fx:id="taComentario" layoutX="102.0" layoutY="376.0" prefHeight="70.0" prefWidth="355.0" />
+            <Button fx:id="btnPostar" layoutX="470.0" layoutY="384.0" mnemonicParsing="false" onAction="#onPostar" prefHeight="51.0" prefWidth="95.0" text="postar" />
+            <Button fx:id="btnsair" layoutX="537.0" layoutY="2.0" mnemonicParsing="false" onAction="#onSair" prefHeight="25.0" prefWidth="59.0" text="sair" textFill="#d30404" />
+            <Button fx:id="btnperfil" layoutX="518.0" layoutY="59.0" mnemonicParsing="false" onAction="#onPerfil" prefHeight="25.0" prefWidth="77.0" text="meu perfil">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Text fx:id="tnome" layoutX="200.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="tEstadoCivil" layoutX="223.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EstadoCivil">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="tDataNascimento" layoutX="379.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DataNascimento">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="countAnjo" layoutX="258.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="countDemonio" layoutX="400.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="countNeutro" layoutX="544.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="479.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Sem%20título-1.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="321.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="332.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Sem%20título-1.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="178.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="189.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Sem%20título-21.jpg" />
                </image>
             </ImageView>
          </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
       </Pane>
    </children>
 </AnchorPane>

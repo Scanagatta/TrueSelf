@@ -8,51 +8,76 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPerfilDonoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPerfilDonoController">
 	<children>
-		<Pane fx:id="pane" prefHeight="400.0" prefWidth="600.0">
+		<Pane fx:id="pane" prefHeight="460.0" prefWidth="600.0">
 			<children>
 				<ImageView fitHeight="100.0" fitWidth="172.0" layoutX="3.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
 					<image>
 						<Image url="@../../bfbfb944a9c2dcba437f8fd31d7c19122473aa36_hq.jpg" />
 					</image>
 				</ImageView>
-				 <Text fx:id="tNome" layoutX="208.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto" />
-            <Text fx:id="tEstadoCivil" layoutX="208.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EstadoCivil" />
-				<TableView fx:id="tblComentarios" layoutX="14.0" layoutY="137.0" prefHeight="204.0" prefWidth="504.0">
+				<TableView fx:id="tblComentarios" layoutX="12.0" layoutY="172.0" prefHeight="219.0" prefWidth="579.0">
 					<columns>
 						<TableColumn fx:id="cData" prefWidth="75.0" text="Data" />
-						<TableColumn fx:id="cComentario" prefWidth="340.0" text="Comentario" />
-						<TableColumn minWidth="0.0" prefWidth="76.0" text="Classificação" />
+						<TableColumn fx:id="cComentario" prefWidth="396.0" text="Comentario" />
+						<TableColumn minWidth="0.0" prefWidth="106.0" text="Classificação" />
 					</columns>
 				</TableView>
-				<Text fx:id="countAnjo" layoutX="255.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo" />
-            <Text fx:id="countDemonio" layoutX="388.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio" />
-            <Text fx:id="countNeutro" layoutX="527.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro" />
-				<ComboBox fx:id="cbxAvaliacao" layoutX="83.0" layoutY="354.0" prefWidth="150.0" />
-				<Text layoutX="34.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avaliar" />
-				<Button fx:id="btnAvaliacao" layoutX="274.0" layoutY="354.0" mnemonicParsing="false" text="ok" />
-				<Button fx:id="btnSair" layoutX="527.0" layoutY="21.0" mnemonicParsing="false" onAction="#onSair" text="sair" />
-				<Button fx:id="btnPesquisar" layoutX="458.0" layoutY="21.0" mnemonicParsing="false" onAction="#onPesquisar" text="pesquisar" />
-				<Text fx:id="tDataNascimento" layoutX="377.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DataNascimento" />
-				 <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="465.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Sem%20título-1.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="314.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Sem%20título-1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="178.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Sem%20título-21.jpg" />
-               </image>
-            </ImageView>
+				<Button fx:id="btnSair" layoutX="540.0" layoutY="2.0" mnemonicParsing="false" onAction="#onSair" prefHeight="25.0" prefWidth="59.0" text="sair" textFill="#f50909" />
+				<Button fx:id="btnPesquisar" layoutX="194.0" layoutY="2.0" mnemonicParsing="false" onAction="#onPesquisar" prefHeight="25.0" prefWidth="313.0" text="pesquisar pessoas" />
+            <Text fx:id="tNome" layoutX="199.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="tEstadoCivil" layoutX="222.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EstadoCivil">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="tDataNascimento" layoutX="378.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DataNascimento">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Text>
 			</children>
 		</Pane>
+				<ComboBox fx:id="cbxAvaliacao" layoutX="97.0" layoutY="410.0" prefWidth="150.0" />
+				<Text layoutX="48.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avaliar" />
+				<Button fx:id="btnAvaliacao" layoutX="288.0" layoutY="410.0" mnemonicParsing="false" text="ok" />
+      <Text fx:id="countAnjo" layoutX="257.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="countDemonio" layoutX="399.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="countNeutro" layoutX="543.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="478.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Sem%20título-1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="331.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Sem%20título-1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="188.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Sem%20título-21.jpg" />
+         </image>
+      </ImageView>
 	</children>
 </AnchorPane>

@@ -4,22 +4,20 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPrimeiraController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPrimeiraController">
    <children>
-      <Pane layoutX="10.0" layoutY="10.0" />
-      <ImageView fitHeight="465.0" fitWidth="630.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="489.0" fitWidth="677.0" layoutX="-23.0" layoutY="-21.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../trueself.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnCadastro" layoutX="31.0" layoutY="282.0" mnemonicParsing="false" onAction="#onCadastrar" prefHeight="107.0" prefWidth="278.0" text="CADASTRE-SE" textFill="#111111">
+      <Button fx:id="btnCadastro" blendMode="HARD_LIGHT" layoutX="31.0" layoutY="282.0" mnemonicParsing="false" onAction="#onCadastrar" prefHeight="107.0" prefWidth="278.0" text="CADASTRE-SE" textFill="#092feb">
          <font>
             <Font name="Eras Demi ITC" size="34.0" />
          </font></Button>
-      <Button fx:id="btnLogin" layoutX="322.0" layoutY="281.0" mnemonicParsing="false" onAction="#onLogar" prefHeight="107.0" prefWidth="278.0" text="LOGIN" textFill="#ee0606">
+      <Button fx:id="btnLogin" blendMode="HARD_LIGHT" layoutX="322.0" layoutY="281.0" mnemonicParsing="false" onAction="#onLogar" prefHeight="107.0" prefWidth="278.0" text="LOGIN" textFill="#f20a0a">
          <font>
             <Font name="Eras Demi ITC" size="34.0" />
          </font></Button>
