@@ -50,37 +50,40 @@ public class CadastroController {
 
 	@FXML
 	private Button btnVoltar;
-	
-    @FXML
-    private RadioButton rdmasculino;
 
-    @FXML
-    private RadioButton rdfeminino;
-    
-    @FXML
-    private ToggleGroup radios;
-    
-	private boolean mulher= false;
+	@FXML
+	private RadioButton rdmasculino;
 
-	private boolean homem= false;
+	@FXML
+	private RadioButton rdfeminino;
+
+	@FXML
+	private ToggleGroup radios;
+
+	private boolean mulher = false;
+
+	private boolean homem = false;
 
 	private Usuario usuario;
 
+	private String vazio = "";
+
 	public void initialize() {
-		cbEstadoCivil.setItems(FXCollections.observableArrayList("solteiro(a)", "namorando", "casado(a)", "divorciado(a)", "viúvo(a)"));
+		cbEstadoCivil.setItems(FXCollections.observableArrayList("solteiro(a)", "namorando", "casado(a)",
+				"divorciado(a)", "viúvo(a)"));
 	}
-	
-    @FXML
-    void onFeminino(ActionEvent event) {
-    	mulher =true;
-    	
-    }
 
-    @FXML
-    void onMasculino(ActionEvent event) {
-    	homem=true;
+	@FXML
+	void onFeminino(ActionEvent event) {
+		mulher = true;
 
-    }
+	}
+
+	@FXML
+	void onMasculino(ActionEvent event) {
+		homem = true;
+
+	}
 
 	public void novo() {
 		usuario = new Usuario();
@@ -102,37 +105,53 @@ public class CadastroController {
 	@FXML
 	void onsalvar(ActionEvent event) {
 		novo();
-		
-		if(homem){
+
+		if (homem) {
 			usuario.setSexo("Sexo: masculino");
 		}
-		if(mulher){
+		if (mulher) {
 			usuario.setSexo("Sexo: feminino");
 		}
-		usuario.setNome(tfNome.getText());
-		usuario.setTelefone(tfTelefone.getText());
-		usuario.setDataNascimento(dtNascimento.getValue());
-		usuario.setLogin(tfLogin.getText());
-		usuario.setEstadoCivil(cbEstadoCivil.getValue());
-		if (conferirSenha()) {
-			if (SimuladorDB.getLogin(tfLogin.getText()) == null) {
-				SimuladorDB.insert(usuario);
-				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(getClass().getResource("telaLogin.fxml"));
-				try {
-					AnchorPane loginView = (AnchorPane) loader.load();
-					TelaPrincipal.root.setCenter(loginView);
-
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
-			} else {
+		if (tfNome.getText().equals(vazio) || tfTelefone.getText().equals(vazio)) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Erro");
+			alert.setHeaderText("Ação inválida");
+			alert.setContentText("Preencha TODOS os campos");
+			alert.showAndWait();
+		} else {
+			if (homem == false && mulher == false) {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Erro");
 				alert.setHeaderText("Ação inválida");
-				alert.setContentText("Login existente");
+				alert.setContentText("Selecione o sexo");
 				alert.showAndWait();
-				limparSenha();
+			} else {
+				usuario.setNome(tfNome.getText());
+				usuario.setTelefone(tfTelefone.getText());
+				usuario.setDataNascimento(dtNascimento.getValue());
+				usuario.setLogin(tfLogin.getText());
+				usuario.setEstadoCivil(cbEstadoCivil.getValue());
+				if (conferirSenha()) {
+					if (SimuladorDB.getLogin(tfLogin.getText()) == null) {
+						SimuladorDB.insert(usuario);
+						FXMLLoader loader = new FXMLLoader();
+						loader.setLocation(getClass().getResource("telaLogin.fxml"));
+						try {
+							AnchorPane loginView = (AnchorPane) loader.load();
+							TelaPrincipal.root.setCenter(loginView);
+
+						} catch (IOException e1) {
+							e1.printStackTrace();
+						}
+					} else {
+						Alert alert = new Alert(AlertType.ERROR);
+						alert.setTitle("Erro");
+						alert.setHeaderText("Ação inválida");
+						alert.setContentText("Login existente");
+						alert.showAndWait();
+						limparSenha();
+					}
+				}
 			}
 		}
 	}
@@ -145,7 +164,7 @@ public class CadastroController {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Erro");
 			alert.setHeaderText("Ação inválida");
-			alert.setContentText("Preencha os campos");
+			alert.setContentText("Preencha TODOS os campos");
 			alert.showAndWait();
 			limparSenha();
 			return false;
