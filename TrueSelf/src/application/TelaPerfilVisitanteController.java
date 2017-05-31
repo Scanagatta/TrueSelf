@@ -94,7 +94,9 @@ public class TelaPerfilVisitanteController {
 		
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
     	cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
+    	
 		tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getLogin(usuario.getLogin()).getComentarios()));
+		
 		limparCampos();
 	}
 
