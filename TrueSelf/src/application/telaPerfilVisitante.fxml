@@ -32,7 +32,7 @@
             <TextArea fx:id="taComentario" layoutX="102.0" layoutY="376.0" prefHeight="70.0" prefWidth="355.0" />
             <Button fx:id="btnPostar" layoutX="470.0" layoutY="384.0" mnemonicParsing="false" onAction="#onPostar" prefHeight="51.0" prefWidth="95.0" text="postar" />
             <Button fx:id="btnsair" layoutX="537.0" layoutY="2.0" mnemonicParsing="false" onAction="#onSair" prefHeight="25.0" prefWidth="59.0" text="sair" textFill="#d30404" />
-            <Button fx:id="btnperfil" layoutX="518.0" layoutY="59.0" mnemonicParsing="false" onAction="#onPerfil" prefHeight="25.0" prefWidth="77.0" text="meu perfil">
+            <Button fx:id="btnperfil" layoutX="441.0" layoutY="2.0" mnemonicParsing="false" onAction="#onPerfil" prefHeight="25.0" prefWidth="77.0" text="meu perfil">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
