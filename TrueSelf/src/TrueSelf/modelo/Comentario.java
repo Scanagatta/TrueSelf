@@ -1,6 +1,5 @@
 package TrueSelf.modelo;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import lombok.Getter;
@@ -8,9 +7,19 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Comentario implements Serializable {
+public class Comentario {
 
-	private static final long serialVersionUID = 7724694173425717880L;
+
+	public Comentario(String comentario, Usuario usuarioEnvia, Usuario usuarioRecebe, LocalDate data) {
+		super();
+		this.comentario = comentario;
+		this.usuarioEnvia = usuarioEnvia;
+		this.usuarioRecebe = usuarioRecebe;
+		this.data = data;
+	}
+	
+	public Comentario(){}
+
 	private String comentario;
 	// usuario que envia a mensagem
 	private Usuario usuarioEnvia;
@@ -27,16 +36,13 @@ public class Comentario implements Serializable {
 	 * @param comentario
 	 * @return
 	 */
-	public void comentar(Usuario usuarioRecebe, Usuario usuarioEnvia, String comentario){
-		this.usuarioRecebe = usuarioRecebe;
-		this.usuarioEnvia = usuarioEnvia;
-		this.comentario = comentario;
-		//data = data.getChronology().dateNow();
-	}
+
 	
 	@Override
 	public String toString() {
 		return comentario;
 	}
+	
+	
 	
 }

@@ -87,14 +87,10 @@ public class TelaPerfilVisitanteController {
 		countAnjo.setText(getUsuario().getQtdAnjo().toString());
 		countDemonio.setText(getUsuario().getQtdDemonio().toString());
 		countNeutro.setText(getUsuario().getQtdNeutro().toString());
-		
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
     	cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
-		tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getComentarios()));
-		
-		//tblComentarios.setItems(FXCollections.observableArrayList(getUsuario().getComentarios()));
-
-		novo();
+		tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getLogin(usuario.getLogin()).getComentarios()));
+		limparCampos();
 	}
 
 	/**
@@ -136,17 +132,12 @@ public class TelaPerfilVisitanteController {
 
     @FXML
     void onPostar(ActionEvent event) {
-    	comentario.comentar(usuario, SimuladorDB.getLogin(TelaLoginController.getDono()), taComentario.getText());
-    	SimuladorDB.insert(comentario);
+    	comentario = new Comentario(taComentario.getText(),usuario, SimuladorDB.getLogin(TelaLoginController.getDono()),
+    			LocalDate.now());
     	tblComentarios.getItems().add(comentario);
-    	tblComentarios.refresh();
-    	novo();
-    }
-    
-    private void novo(){
-    	comentario = new Comentario();
     	limparCampos();
     }
+    
 
     private void limparCampos(){
     	taComentario.setText("");

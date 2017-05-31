@@ -2,6 +2,7 @@ package TrueSelf.modelo;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Getter;
@@ -22,7 +23,7 @@ public class Usuario implements Serializable {
 	private Integer qtdNeutro;
 	private Integer qtdDemonio;
 	private Integer qtdAnjo;
-	private static List<Comentario> comentarios;
+	private List <Comentario> comentarios;
 	
 	@Override
 	public String toString() {
@@ -36,17 +37,11 @@ public class Usuario implements Serializable {
 		setQtdAnjo(0);
 		setQtdDemonio(0);
 		setQtdNeutro(0);
+		comentarios = new ArrayList<Comentario>();
+	}
+	
+	public void adicionarComentario(Comentario comentario){
+		comentarios.add(comentario);
 	}
 
-
-
-	public static List<Comentario> getComentarios() {
-		return comentarios;
-	}
-
-
-
-	public static void setComentarios(List<Comentario> comentarios) {
-		Usuario.comentarios = comentarios;
-	}
 }

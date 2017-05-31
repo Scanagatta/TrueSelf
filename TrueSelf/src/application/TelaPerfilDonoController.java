@@ -100,7 +100,7 @@ public class TelaPerfilDonoController {
 		
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
     	cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
-		tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getComentarios()));
+		tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getLogin(TelaLoginController.getDono()).getComentarios()));
 		
 	}
 
