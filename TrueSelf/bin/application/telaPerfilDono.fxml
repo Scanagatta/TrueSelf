@@ -44,6 +44,11 @@
                   <Font name="Comic Sans MS" size="15.0" />
                </font>
             </Text>
+            <Text fx:id="lSexo" layoutX="14.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sexo">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Text>
 			</children>
 		</Pane>
 				<ComboBox fx:id="cbxAvaliacao" layoutX="97.0" layoutY="410.0" prefWidth="150.0" />

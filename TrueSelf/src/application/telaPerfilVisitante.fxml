@@ -86,5 +86,10 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Pane>
+      <Text fx:id="lSexo" layoutX="24.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sexo">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

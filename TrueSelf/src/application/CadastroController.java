@@ -13,7 +13,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 
@@ -48,12 +50,37 @@ public class CadastroController {
 
 	@FXML
 	private Button btnVoltar;
+	
+    @FXML
+    private RadioButton rdmasculino;
+
+    @FXML
+    private RadioButton rdfeminino;
+    
+    @FXML
+    private ToggleGroup radios;
+    
+	private boolean mulher= false;
+
+	private boolean homem= false;
 
 	private Usuario usuario;
 
 	public void initialize() {
-		cbEstadoCivil.setItems(FXCollections.observableArrayList("solteiro", "namorando", "casado", "divorciado"));
+		cbEstadoCivil.setItems(FXCollections.observableArrayList("solteiro(a)", "namorando", "casado(a)", "divorciado(a)", "viúvo(a)"));
 	}
+	
+    @FXML
+    void onFeminino(ActionEvent event) {
+    	mulher =true;
+    	
+    }
+
+    @FXML
+    void onMasculino(ActionEvent event) {
+    	homem=true;
+
+    }
 
 	public void novo() {
 		usuario = new Usuario();
@@ -75,6 +102,13 @@ public class CadastroController {
 	@FXML
 	void onsalvar(ActionEvent event) {
 		novo();
+		
+		if(homem){
+			usuario.setSexo("Sexo: masculino");
+		}
+		if(mulher){
+			usuario.setSexo("Sexo: feminino");
+		}
 		usuario.setNome(tfNome.getText());
 		usuario.setTelefone(tfTelefone.getText());
 		usuario.setDataNascimento(dtNascimento.getValue());

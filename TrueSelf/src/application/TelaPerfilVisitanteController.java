@@ -63,6 +63,9 @@ public class TelaPerfilVisitanteController {
     
     @FXML
     private Button btnPostar;
+    
+    @FXML
+    private Text lSexo;
 
 	private static Usuario usuario;
 	
@@ -82,11 +85,13 @@ public class TelaPerfilVisitanteController {
 		// onPesquisar
 		// da classse TelaPerfilDonoController
 		tnome.setText(getUsuario().getNome());
+		lSexo.setText(getUsuario().getSexo());
 		tEstadoCivil.setText(getUsuario().getEstadoCivil());
 		tDataNascimento.setText(getUsuario().getDataNascimento().toString());
 		countAnjo.setText(getUsuario().getQtdAnjo().toString());
 		countDemonio.setText(getUsuario().getQtdDemonio().toString());
 		countNeutro.setText(getUsuario().getQtdNeutro().toString());
+		
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
     	cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
 		tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getLogin(usuario.getLogin()).getComentarios()));

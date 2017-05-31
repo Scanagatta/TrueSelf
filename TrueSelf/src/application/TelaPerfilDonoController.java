@@ -9,6 +9,7 @@ import java.util.Arrays;
 import TrueSelf.modelo.Comentario;
 import TrueSelf.modelo.SimuladorDB;
 import TrueSelf.modelo.Usuario;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -76,15 +77,20 @@ public class TelaPerfilDonoController {
 
 	@FXML
 	private ComboBox<ImageView> cbxAvaliacao;
+	
+    @FXML
+    private Text lSexo;
 
 	public void initialize() {
 		SimuladorDB.getLogin(TelaLoginController.getDono());
 		tNome.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getNome());
+		lSexo.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getSexo());
 		tEstadoCivil.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getEstadoCivil());
 		tDataNascimento.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getDataNascimento().toString());
 		countAnjo.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
 		countDemonio.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdDemonio().toString());
 		countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdNeutro().toString());
+		
 		for (String img : Arrays.asList("image.png", "image2.jpg", "image3.jpg")) {
 			// encontra o lugar onde esta a imagem
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream(img);
@@ -99,7 +105,7 @@ public class TelaPerfilDonoController {
 		
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
     	cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
-		
+    	
 		
 	}
 
