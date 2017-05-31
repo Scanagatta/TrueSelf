@@ -134,6 +134,7 @@ public class TelaPerfilVisitanteController {
     void onPostar(ActionEvent event) {
     	comentario = new Comentario(taComentario.getText(),usuario, SimuladorDB.getLogin(TelaLoginController.getDono()),
     			LocalDate.now());
+    	usuario.adicionarComentario(comentario);
     	tblComentarios.getItems().add(comentario);
     	limparCampos();
     }
