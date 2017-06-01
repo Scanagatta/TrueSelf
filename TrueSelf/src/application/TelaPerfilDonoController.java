@@ -23,6 +23,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -38,9 +39,6 @@ public class TelaPerfilDonoController {
 
 	@FXML
 	private Text tEstadoCivil;
-
-	@FXML
-	private TableView<String> lvComentarios;
 
 	@FXML
 	private Text countAnjo;
@@ -80,6 +78,8 @@ public class TelaPerfilDonoController {
 	
     @FXML
     private Text lSexo;
+    
+    private Comentario comentario;
 
 	public void initialize() {
 		SimuladorDB.getLogin(TelaLoginController.getDono());
@@ -126,6 +126,15 @@ public class TelaPerfilDonoController {
 			e1.printStackTrace();
 		}
 	}
+	
+
+    @FXML
+    void onAvaliar(ActionEvent event) {
+    	if(event.getEventType().equals(MouseEvent.MOUSE_CLICKED)){
+    		 comentario = tblComentarios.getSelectionModel().getSelectedItem();
+    		 //comentario.getUsuarioEnvia().
+    	}
+    }
 
 	/**
 	 * é o botao de pesquisa dessa tela TelaPerfilDonoController

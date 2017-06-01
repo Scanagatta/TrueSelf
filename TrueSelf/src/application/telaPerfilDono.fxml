@@ -58,7 +58,7 @@
 		</Pane>
 				<ComboBox fx:id="cbxAvaliacao" layoutX="97.0" layoutY="410.0" prefWidth="150.0" />
 				<Text layoutX="48.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avaliar" />
-				<Button fx:id="btnAvaliacao" layoutX="288.0" layoutY="410.0" mnemonicParsing="false" text="ok" />
+				<Button fx:id="btnAvaliacao" layoutX="288.0" layoutY="410.0" mnemonicParsing="false" onAction="#onAvaliar" text="ok" />
       <Text fx:id="countAnjo" layoutX="257.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo">
          <font>
             <Font size="23.0" />

@@ -144,6 +144,7 @@ public class TelaPerfilVisitanteController {
     			LocalDate.now());
     	usuario.adicionarComentario(comentario);
     	tblComentarios.getItems().add(comentario);
+    	SimuladorDB.atualizarUsuarios();
     	limparCampos();
     }
     

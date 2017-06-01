@@ -1,5 +1,6 @@
 package TrueSelf.modelo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import lombok.Getter;
@@ -7,8 +8,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Comentario {
+public class Comentario  implements Serializable{
 
+
+
+	private static final long serialVersionUID = 673564205224778456L;
 
 	public Comentario(String comentario, Usuario usuarioEnvia, Usuario usuarioRecebe, LocalDate data) {
 		super();
@@ -36,7 +40,10 @@ public class Comentario {
 	 * @param comentario
 	 * @return
 	 */
-
+	
+	public void adicionarCount(){
+		
+	}
 	
 	@Override
 	public String toString() {
