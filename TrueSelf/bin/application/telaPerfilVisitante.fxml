@@ -61,24 +61,24 @@
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text fx:id="countNeutro" layoutX="544.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro">
+            <Text fx:id="countNeutro" layoutX="547.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
             <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="479.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Sem%20título-1.jpg" />
+                  <Image url="@../../duvida.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="332.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Sem%20título-1.png" />
+                  <Image url="@../../diabo.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="189.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Sem%20título-21.jpg" />
+                  <Image url="@../../anjo.png" />
                </image>
             </ImageView>
          </children>

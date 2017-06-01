@@ -49,6 +49,11 @@
                   <Font name="Comic Sans MS" size="15.0" />
                </font>
             </Text>
+            <Text fx:id="countNeutro" layoutX="547.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
 			</children>
 		</Pane>
 				<ComboBox fx:id="cbxAvaliacao" layoutX="97.0" layoutY="410.0" prefWidth="150.0" />
@@ -64,24 +69,19 @@
             <Font size="23.0" />
          </font>
       </Text>
-      <Text fx:id="countNeutro" layoutX="543.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Text>
       <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="478.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Sem%20título-1.jpg" />
+            <Image url="@../../duvida.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="331.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Sem%20título-1.png" />
+            <Image url="@../../diabo.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="188.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Sem%20título-21.jpg" />
+            <Image url="@../../anjo.png" />
          </image>
       </ImageView>
 	</children>

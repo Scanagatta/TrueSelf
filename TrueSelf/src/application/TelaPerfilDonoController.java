@@ -91,7 +91,7 @@ public class TelaPerfilDonoController {
 		countDemonio.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdDemonio().toString());
 		countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdNeutro().toString());
 		
-		for (String img : Arrays.asList("image.png", "image2.jpg", "image3.jpg")) {
+		for (String img : Arrays.asList("image1.png", "image2.png", "image3.png")) {
 			// encontra o lugar onde esta a imagem
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream(img);
 			// coloca a imagem em um image
