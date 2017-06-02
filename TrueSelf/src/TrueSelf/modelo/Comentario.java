@@ -41,8 +41,16 @@ public class Comentario  implements Serializable{
 	 * @return
 	 */
 	
-	public void adicionarCount(){
-		
+	public void adicionarCountAnjo(){
+		usuarioEnvia.setQtdAnjo(usuarioEnvia.getQtdAnjo() + 1);
+	}
+	
+	public void adicionarCountDemonio(){
+		usuarioEnvia.setQtdDemonio(usuarioEnvia.getQtdDemonio() + 1);
+	}
+	
+	public void adicionarCountNeutro(){
+		usuarioEnvia.setQtdNeutro(usuarioEnvia.getQtdNeutro() + 1);
 	}
 	
 	@Override

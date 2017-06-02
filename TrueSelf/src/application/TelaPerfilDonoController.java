@@ -15,11 +15,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -60,26 +62,26 @@ public class TelaPerfilDonoController {
 
 	@FXML
 	private Text tDataNascimento;
-	
+
 	@FXML
-    private TableView<Comentario> tblComentarios;
+	private TableView<Comentario> tblComentarios;
 
-    @FXML
-    private TableColumn<Comentario, LocalDate> cData;
+	@FXML
+	private TableColumn<Comentario, LocalDate> cData;
 
-    @FXML
-    private TableColumn<Comentario, String> cComentario;
+	@FXML
+	private TableColumn<Comentario, String> cComentario;
 
-    @FXML
-    private TableColumn<Comentario, ImageView> cClassificacao;
+	@FXML
+	private TableColumn<Comentario, ImageView> cClassificacao;
 
 	@FXML
 	private ComboBox<ImageView> cbxAvaliacao;
-	
-    @FXML
-    private Text lSexo;
-    
-    private Comentario comentario;
+
+	@FXML
+	private Text lSexo;
+
+	private Comentario comentario;
 
 	public void initialize() {
 		SimuladorDB.getLogin(TelaLoginController.getDono());
@@ -90,7 +92,7 @@ public class TelaPerfilDonoController {
 		countAnjo.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
 		countDemonio.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdDemonio().toString());
 		countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdNeutro().toString());
-		
+
 		for (String img : Arrays.asList("image1.png", "image2.png", "image3.png")) {
 			// encontra o lugar onde esta a imagem
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream(img);
@@ -102,11 +104,12 @@ public class TelaPerfilDonoController {
 			// coloca o image view no combobox
 			cbxAvaliacao.getItems().addAll(icone);
 		}
-		
+
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
-    	cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
-    	tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getLogin(TelaLoginController.getDono()).getComentarios()));
-		
+		cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
+		tblComentarios.setItems(FXCollections
+				.observableArrayList(SimuladorDB.getLogin(TelaLoginController.getDono()).getComentarios()));
+
 	}
 
 	/**
@@ -126,15 +129,19 @@ public class TelaPerfilDonoController {
 			e1.printStackTrace();
 		}
 	}
-	
 
-    @FXML
-    void onAvaliar(ActionEvent event) {
-    	if(event.getEventType().equals(MouseEvent.MOUSE_CLICKED)){
-    		 comentario = tblComentarios.getSelectionModel().getSelectedItem();
-    		 //comentario.getUsuarioEnvia().
-    	}
-    }
+	@FXML
+	void onAvaliar(ActionEvent event) {
+		// comentario = tblComentarios.getSelectionModel().getSelectedItem();
+		// switch (cbxAvaliacao.getValue().imageProperty().) {
+		// case value:
+		// comentario.
+		// break;
+
+		// default:
+		// break;
+		// }
+	}
 
 	/**
 	 * é o botao de pesquisa dessa tela TelaPerfilDonoController
