@@ -139,8 +139,8 @@ public class TelaPerfilVisitanteController {
 	@FXML
 	void onPostar(ActionEvent event) {
 
-		comentario = new Comentario(taComentario.getText(), visitado,
-				SimuladorDB.getLogin(TelaLoginController.getDono()), LocalDate.now());
+		comentario = new Comentario(taComentario.getText(),SimuladorDB.getLogin(TelaLoginController.getDono()),
+				visitado, LocalDate.now());
 		visitado.adicionarComentario(comentario);
 		tblComentarios.getItems().add(comentario);
 		SimuladorDB.atualizarUsuarios();

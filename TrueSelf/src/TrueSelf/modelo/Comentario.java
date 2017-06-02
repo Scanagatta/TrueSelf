@@ -3,6 +3,7 @@ package TrueSelf.modelo;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import javafx.scene.image.ImageView;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +14,11 @@ public class Comentario  implements Serializable{
 
 
 	private static final long serialVersionUID = 673564205224778456L;
-
+	
+	
+	/*
+	 * Construtor que cria  o comentario.
+	 */
 	public Comentario(String comentario, Usuario usuarioEnvia, Usuario usuarioRecebe, LocalDate data) {
 		super();
 		this.comentario = comentario;
@@ -32,6 +37,7 @@ public class Comentario  implements Serializable{
 	
 	private LocalDate data;
 	
+	private ImageView classificacao;
 	/**
 	 * metodo para fazer salvar os comentarios e quem os fez e recebeu
 	 * 
@@ -41,17 +47,6 @@ public class Comentario  implements Serializable{
 	 * @return
 	 */
 	
-	public void adicionarCountAnjo(){
-		usuarioEnvia.setQtdAnjo(usuarioEnvia.getQtdAnjo() + 1);
-	}
-	
-	public void adicionarCountDemonio(){
-		usuarioEnvia.setQtdDemonio(usuarioEnvia.getQtdDemonio() + 1);
-	}
-	
-	public void adicionarCountNeutro(){
-		usuarioEnvia.setQtdNeutro(usuarioEnvia.getQtdNeutro() + 1);
-	}
 	
 	@Override
 	public String toString() {
