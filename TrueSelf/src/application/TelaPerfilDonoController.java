@@ -182,7 +182,7 @@ public class TelaPerfilDonoController {
 			// n deixa o usuario se comentar
 			if (cmb.getValue().equals(TelaLoginController.getLogado())) {
 				palco.close();
-
+				
 			} else {
 
 				// pega o usuario do combobox e salva lá na outra classe
