@@ -4,6 +4,7 @@ package application;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import TrueSelf.modelo.Comentario;
@@ -157,9 +158,16 @@ public class TelaPerfilDonoController {
 	void onPesquisar(final ActionEvent event) {
 
 		ComboBox<Usuario> cmb = new ComboBox<>();
+		
+		// cria uma lista
+		ArrayList<Usuario> usuarioSemOdono = new ArrayList<>(SimuladorDB.getUsuarios());		
+		// ele remove o cara que esta logado e deixa todos os outros
+		usuarioSemOdono.removeIf(u-> u.getLogin().equals(TelaLoginController.getLogado().getLogin()));
 
 		// no combobox vai conter os usuarios que tao no simuladorBD
-		cmb.getItems().addAll(SimuladorDB.getUsuarios());
+		cmb.getItems().addAll(usuarioSemOdono);
+		
+	
 
 		// ele da um new pegando daquela classe que faz a pesquisa letra por
 		// letra,
@@ -187,11 +195,7 @@ public class TelaPerfilDonoController {
 			// ele consome o evento (pesquisar)
 			event.consume();
 
-			// n deixa o usuario se comentar
-			if (cmb.getValue().equals(TelaLoginController.getLogado())) {
-				palco.close();
-				
-			} else {
+
 
 				// pega o usuario do combobox e salva lá na outra classe
 				TelaPerfilVisitanteController.setVisitado(cmb.getValue());
@@ -210,7 +214,7 @@ public class TelaPerfilDonoController {
 					e1.printStackTrace();
 				}
 
-			}
+			
 		}
 
 		);
