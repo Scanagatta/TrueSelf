@@ -90,7 +90,7 @@ public class TelaPerfilDonoController {
 		countDemonio.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdDemonio().toString());
 		countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdNeutro().toString());
 
-		for (String img : Arrays.asList("image1.png", "image2.png", "image3.png")) {
+		for (String img : Arrays.asList("image2.png", "image1.png", "image3.png")) {
 			// encontra o lugar onde esta a imagem
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream(img);
 			// coloca a imagem em um image
@@ -104,6 +104,7 @@ public class TelaPerfilDonoController {
 
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
 		cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
+		//cClassificacao.setCellValueFactory(new PropertyValueFactory<>("classificacao"));
 		tblComentarios.setItems(FXCollections
 				.observableArrayList(SimuladorDB.getLogin(TelaLoginController.getDono()).getComentarios()));
 
@@ -129,15 +130,22 @@ public class TelaPerfilDonoController {
 
 	@FXML
 	void onAvaliar(ActionEvent event) {
-		// comentario = tblComentarios.getSelectionModel().getSelectedItem();
-		// switch (cbxAvaliacao.getValue().imageProperty().) {
-		// case value:
-		// comentario.
-		// break;
-
-		// default:
-		// break;
-		// }
+		comentario = tblComentarios.getSelectionModel().getSelectedItem();
+		switch ((cbxAvaliacao.getSelectionModel().getSelectedIndex())) {
+		case 0:
+			comentario.getUsuarioEnvia().setQtdAnjo(comentario.getUsuarioEnvia().getQtdAnjo() + 1);
+			break;
+		case 1:
+			comentario.getUsuarioEnvia().setQtdDemonio(comentario.getUsuarioEnvia().getQtdDemonio() + 1);
+			break;
+		case 2:
+			comentario.getUsuarioEnvia().setQtdNeutro(comentario.getUsuarioEnvia().getQtdNeutro() + 1);
+			break;
+		default:
+			break;
+		}
+		SimuladorDB.atualizarUsuarios();
+		cbxAvaliacao.getSelectionModel().clearSelection();
 	}
 
 	/**
