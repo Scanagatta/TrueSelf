@@ -15,21 +15,17 @@ import javafx.stage.Stage;
 
 public class TelaPrimeiraController {
 
-    @FXML
-    private Button btnLogin;
+	@FXML
+	private Button btnLogin;
 
-    @FXML
-    private Button btnCadastro;
+	@FXML
+	private Button btnCadastro;
 
-    @FXML
-    private BorderPane bpTela;
-    
-  
-    
-     
-    
-    @FXML
-    void onCadastrar(ActionEvent event) {
+	@FXML
+	private BorderPane bpTela;
+
+	@FXML
+	void onCadastrar(ActionEvent event) {
 		Stage stage = new Stage();
 
 		Text texto = new Text();
@@ -42,33 +38,31 @@ public class TelaPrimeiraController {
 		stage.setWidth(390);
 		stage.setHeight(300);
 		stage.show();
-		
-    	FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("telaCadastro.fxml"));
-    	try{
-    		AnchorPane agenciaView = (AnchorPane) loader.load();
-    		TelaPrincipal.root.setCenter(agenciaView);
-    		
-    	} catch (IOException e1) {
-    		e1.printStackTrace();
-    	}
 
-    }
-    
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("telaCadastro.fxml"));
+		try {
+			AnchorPane agenciaView = (AnchorPane) loader.load();
+			TelaPrincipal.root.setCenter(agenciaView);
 
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 
-    @FXML
-    void onLogar(ActionEvent event) {
-    	FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("telaLogin.fxml"));
-    	try{
-    		AnchorPane loginView = (AnchorPane) loader.load();
-    		TelaPrincipal.root.setCenter(loginView);
-    		
-    	} catch (IOException e1) {
-    		e1.printStackTrace();
-    	}
+	}
 
-    }
+	@FXML
+	void onLogar(ActionEvent event) {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("telaLogin.fxml"));
+		try {
+			AnchorPane loginView = (AnchorPane) loader.load();
+			TelaPrincipal.root.setCenter(loginView);
+
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
+	}
 
 }

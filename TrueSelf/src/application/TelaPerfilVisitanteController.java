@@ -1,6 +1,5 @@
 package application;
 
-
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -45,30 +44,30 @@ public class TelaPerfilVisitanteController {
 
 	@FXML
 	private Text tDataNascimento;
-	
+
 	@FXML
-    private TableView<Comentario> tblComentarios;
+	private TableView<Comentario> tblComentarios;
 
-    @FXML
-    private TableColumn<Comentario, LocalDate> cData;
+	@FXML
+	private TableColumn<Comentario, LocalDate> cData;
 
-    @FXML
-    private TableColumn<Comentario, String> cComentario;
+	@FXML
+	private TableColumn<Comentario, String> cComentario;
 
-    @FXML
-    private TableColumn<Comentario, ImageView> cClassificacao;
-    
-    @FXML
-    private TextArea taComentario;
-    
-    @FXML
-    private Button btnPostar;
-    
-    @FXML
-    private Text lSexo;
+	@FXML
+	private TableColumn<Comentario, ImageView> cClassificacao;
+
+	@FXML
+	private TextArea taComentario;
+
+	@FXML
+	private Button btnPostar;
+
+	@FXML
+	private Text lSexo;
 
 	private static Usuario visitado;
-	
+
 	private Comentario comentario;
 
 	public static Usuario getVisitado() {
@@ -91,12 +90,13 @@ public class TelaPerfilVisitanteController {
 		countAnjo.setText(getVisitado().getQtdAnjo().toString());
 		countDemonio.setText(getVisitado().getQtdDemonio().toString());
 		countNeutro.setText(getVisitado().getQtdNeutro().toString());
-		
+
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
-    	cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
-    	
-		tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getLogin(visitado.getLogin()).getComentarios()));
-		
+		cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
+
+		tblComentarios.setItems(
+				FXCollections.observableArrayList(SimuladorDB.getLogin(visitado.getLogin()).getComentarios()));
+
 		limparCampos();
 	}
 
@@ -135,22 +135,20 @@ public class TelaPerfilVisitanteController {
 			e1.printStackTrace();
 		}
 	}
-	
 
-    @FXML
-    void onPostar(ActionEvent event) {
+	@FXML
+	void onPostar(ActionEvent event) {
 
-    	comentario = new Comentario(taComentario.getText(),visitado, SimuladorDB.getLogin(TelaLoginController.getDono()),
-    			LocalDate.now());
-    	visitado.adicionarComentario(comentario);
-    	tblComentarios.getItems().add(comentario);
-    	SimuladorDB.atualizarUsuarios();
-    	limparCampos();
-    }
-    
+		comentario = new Comentario(taComentario.getText(), visitado,
+				SimuladorDB.getLogin(TelaLoginController.getDono()), LocalDate.now());
+		visitado.adicionarComentario(comentario);
+		tblComentarios.getItems().add(comentario);
+		SimuladorDB.atualizarUsuarios();
+		limparCampos();
+	}
 
-    private void limparCampos(){
-    	taComentario.setText("");
-    }
+	private void limparCampos() {
+		taComentario.setText("");
+	}
 
 }
