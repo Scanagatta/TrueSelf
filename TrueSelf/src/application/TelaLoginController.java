@@ -33,6 +33,8 @@ public class TelaLoginController {
 	
 	private static String dono;
 	
+	private static Usuario logado;
+	
 	@FXML
 	void onEntrar(ActionEvent event) {
 		
@@ -41,6 +43,7 @@ public class TelaLoginController {
 		String login = tfLogin.getText();
 		String senha = pfSenha.getText();
 		Usuario usuario = SimuladorDB.getLogin(login);
+		setLogado(usuario);
 		if (usuario != null && usuario.getSenha().equals(senha)) {
 			setDono(login);
 	    	FXMLLoader loader = new FXMLLoader();
@@ -81,6 +84,14 @@ public class TelaLoginController {
 	public void setDono(String dono) {
 		TelaLoginController.dono = dono;
 		//this.dono = dono;
+	}
+
+	public static Usuario getLogado() {
+		return logado;
+	}
+
+	public static void setLogado(Usuario logado) {
+		TelaLoginController.logado = logado;
 	}
 
 }

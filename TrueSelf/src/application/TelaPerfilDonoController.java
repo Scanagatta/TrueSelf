@@ -15,17 +15,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -161,33 +158,6 @@ public class TelaPerfilDonoController {
 		// sem essa linha a pesquisa de letras não funciona
 		new PesquisaCombobox<Usuario>(cmb);
 
-		// com esse comando ele pega o click do mouse no combobox e executa
-		// as
-		// ações abaixo
-		cmb.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
-			// ele consome o evento (pesquisar)
-			event.consume();
-
-			// pega o usuario do combobox e salva lá na outra classe
-			TelaPerfilVisitanteController.setUsuario(cmb.getValue());
-
-			// fecha o stage (telinha)
-
-			// carrega outra tela
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
-			try {
-				AnchorPane loginView = (AnchorPane) loader.load();
-				TelaPrincipal.root.setCenter(loginView);
-
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-
-		}
-
-		);
-
 		Stage palco = new Stage();
 		VBox raiz = new VBox(10); // 1
 		raiz.setAlignment(Pos.CENTER); // 2
@@ -209,26 +179,34 @@ public class TelaPerfilDonoController {
 			// ele consome o evento (pesquisar)
 			event.consume();
 
-			// pega o usuario do combobox e salva lá na outra classe
-			TelaPerfilVisitanteController.setUsuario(cmb.getValue());
-			palco.close();
+			// n deixa o usuario se comentar
+			if (cmb.getValue().equals(TelaLoginController.getLogado())) {
+				palco.close();
 
-			// fecha o stage (telinha)
+			} else {
 
-			// carrega outra tela
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
-			try {
-				AnchorPane loginView = (AnchorPane) loader.load();
-				TelaPrincipal.root.setCenter(loginView);
+				// pega o usuario do combobox e salva lá na outra classe
+				TelaPerfilVisitanteController.setVisitado(cmb.getValue());
+				palco.close();
 
-			} catch (IOException e1) {
-				e1.printStackTrace();
+				// fecha o stage (telinha)
+
+				// carrega outra tela
+				FXMLLoader loader = new FXMLLoader();
+				loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
+				try {
+					AnchorPane loginView = (AnchorPane) loader.load();
+					TelaPrincipal.root.setCenter(loginView);
+
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+
 			}
-
 		}
 
 		);
+
 	}
 }
 

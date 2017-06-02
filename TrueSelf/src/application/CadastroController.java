@@ -139,7 +139,6 @@ public class CadastroController {
 						try {
 							AnchorPane loginView = (AnchorPane) loader.load();
 							TelaPrincipal.root.setCenter(loginView);
-
 						} catch (IOException e1) {
 							e1.printStackTrace();
 						}

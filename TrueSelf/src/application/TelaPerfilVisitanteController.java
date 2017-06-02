@@ -67,16 +67,16 @@ public class TelaPerfilVisitanteController {
     @FXML
     private Text lSexo;
 
-	private static Usuario usuario;
+	private static Usuario visitado;
 	
 	private Comentario comentario;
 
-	public static Usuario getUsuario() {
-		return usuario;
+	public static Usuario getVisitado() {
+		return visitado;
 	}
 
-	public static void setUsuario(Usuario usuario) {
-		TelaPerfilVisitanteController.usuario = usuario;
+	public static void setVisitado(Usuario visitado) {
+		TelaPerfilVisitanteController.visitado = visitado;
 	}
 
 	public void initialize() {
@@ -84,18 +84,18 @@ public class TelaPerfilVisitanteController {
 		// ele ta inicializando com o usuario que foi pego no combobox do metodo
 		// onPesquisar
 		// da classse TelaPerfilDonoController
-		tnome.setText(getUsuario().getNome());
-		lSexo.setText(getUsuario().getSexo());
-		tEstadoCivil.setText(getUsuario().getEstadoCivil());
-		tDataNascimento.setText(getUsuario().getDataNascimento().toString());
-		countAnjo.setText(getUsuario().getQtdAnjo().toString());
-		countDemonio.setText(getUsuario().getQtdDemonio().toString());
-		countNeutro.setText(getUsuario().getQtdNeutro().toString());
+		tnome.setText(getVisitado().getNome());
+		lSexo.setText(getVisitado().getSexo());
+		tEstadoCivil.setText(getVisitado().getEstadoCivil());
+		tDataNascimento.setText(getVisitado().getDataNascimento().toString());
+		countAnjo.setText(getVisitado().getQtdAnjo().toString());
+		countDemonio.setText(getVisitado().getQtdDemonio().toString());
+		countNeutro.setText(getVisitado().getQtdNeutro().toString());
 		
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
     	cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
     	
-		tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getLogin(usuario.getLogin()).getComentarios()));
+		tblComentarios.setItems(FXCollections.observableArrayList(SimuladorDB.getLogin(visitado.getLogin()).getComentarios()));
 		
 		limparCampos();
 	}
@@ -140,9 +140,9 @@ public class TelaPerfilVisitanteController {
     @FXML
     void onPostar(ActionEvent event) {
 
-    	comentario = new Comentario(taComentario.getText(),usuario, SimuladorDB.getLogin(TelaLoginController.getDono()),
+    	comentario = new Comentario(taComentario.getText(),visitado, SimuladorDB.getLogin(TelaLoginController.getDono()),
     			LocalDate.now());
-    	usuario.adicionarComentario(comentario);
+    	visitado.adicionarComentario(comentario);
     	tblComentarios.getItems().add(comentario);
     	SimuladorDB.atualizarUsuarios();
     	limparCampos();
