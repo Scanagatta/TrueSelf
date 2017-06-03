@@ -11,13 +11,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.util.Callback;
 
 public class TelaPerfilVisitanteController {
 
@@ -55,7 +58,7 @@ public class TelaPerfilVisitanteController {
 	private TableColumn<Comentario, String> cComentario;
 
 	@FXML
-	private TableColumn<Comentario, ImageView> cClassificacao;
+	private TableColumn<Comentario, Image> cClassificacao;
 
 	@FXML
 	private TextArea taComentario;
@@ -96,7 +99,26 @@ public class TelaPerfilVisitanteController {
 
 		tblComentarios.setItems(
 				FXCollections.observableArrayList(SimuladorDB.getLogin(visitado.getLogin()).getComentarios()));
+		cClassificacao.setCellValueFactory(new PropertyValueFactory<>("imagemClassificacao"));
+		cClassificacao.setCellFactory(new Callback<TableColumn<Comentario, Image>, TableCell<Comentario, Image>>() {
 
+			@Override
+			public TableCell<Comentario, Image> call(TableColumn<Comentario, Image> param) {
+				final ImageView imageView = new ImageView();
+				TableCell<Comentario, Image> cell = new TableCell<Comentario, Image>() {
+					@Override
+					protected void updateItem(Image item, boolean empty) {
+						if (item != null) {
+							imageView.setFitHeight(20);
+							imageView.setFitWidth(20);
+							imageView.setImage(item);
+						}
+					}
+				};
+				cell.setGraphic(imageView);
+				return cell;
+			}
+		});
 		limparCampos();
 	}
 
