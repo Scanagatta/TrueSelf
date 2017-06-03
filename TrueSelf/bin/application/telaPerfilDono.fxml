@@ -24,7 +24,7 @@
 					<columns>
 						<TableColumn fx:id="cData" prefWidth="75.0" text="Data" />
 						<TableColumn fx:id="cComentario" prefWidth="396.0" text="Comentario" />
-						<TableColumn minWidth="0.0" prefWidth="106.0" text="Classificação" />
+						<TableColumn fx:id="cClassificacao" minWidth="0.0" prefWidth="106.0" text="Classificação" />
 					</columns>
 				</TableView>
 				<Button fx:id="btnSair" layoutX="540.0" layoutY="2.0" mnemonicParsing="false" onAction="#onSair" prefHeight="25.0" prefWidth="59.0" text="sair" textFill="#f50909" />

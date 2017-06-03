@@ -16,11 +16,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -29,6 +32,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 public class TelaPerfilDonoController {
 	@FXML
@@ -71,7 +75,7 @@ public class TelaPerfilDonoController {
 	private TableColumn<Comentario, String> cComentario;
 
 	@FXML
-	private TableColumn<Comentario, ImageView> cClassificacao;
+	private TableColumn<Comentario, Image> cClassificacao;
 
 	@FXML
 	private ComboBox<ImageView> cbxAvaliacao;
@@ -105,7 +109,27 @@ public class TelaPerfilDonoController {
 
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
 		cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
-		//cClassificacao.setCellValueFactory(new PropertyValueFactory<>("classificacao"));
+
+		cClassificacao.setCellValueFactory(new PropertyValueFactory<>("imagemClassificacao"));
+		cClassificacao.setCellFactory(new Callback<TableColumn<Comentario, Image>, TableCell<Comentario, Image>>() {
+
+			@Override
+			public TableCell<Comentario, Image> call(TableColumn<Comentario, Image> param) {
+				final ImageView imageView = new ImageView();
+				TableCell<Comentario, Image> cell = new TableCell<Comentario, Image>() {
+					@Override
+					protected void updateItem(Image item, boolean empty) {
+						if (item != null) {
+							imageView.setFitHeight(20);
+							imageView.setFitWidth(20);
+							imageView.setImage(item);
+						}
+					}
+				};
+				cell.setGraphic(imageView);
+				return cell;
+			}
+		});
 		tblComentarios.setItems(FXCollections
 				.observableArrayList(SimuladorDB.getLogin(TelaLoginController.getDono()).getComentarios()));
 
@@ -132,21 +156,35 @@ public class TelaPerfilDonoController {
 	@FXML
 	void onAvaliar(ActionEvent event) {
 		comentario = tblComentarios.getSelectionModel().getSelectedItem();
+		if (comentario.getClassificacao() != null) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Erro");
+			alert.setHeaderText("Ação inválida");
+			alert.setContentText("Comentario ja classificado");
+			alert.showAndWait();
+			cbxAvaliacao.getSelectionModel().clearSelection();
+			// já classificou...
+			return;
+		}
 		switch ((cbxAvaliacao.getSelectionModel().getSelectedIndex())) {
 		case 0:
 			comentario.getUsuarioEnvia().setQtdAnjo(comentario.getUsuarioEnvia().getQtdAnjo() + 1);
+			comentario.setClassificacao(0);
 			break;
 		case 1:
 			comentario.getUsuarioEnvia().setQtdDemonio(comentario.getUsuarioEnvia().getQtdDemonio() + 1);
+			comentario.setClassificacao(1);
 			break;
 		case 2:
 			comentario.getUsuarioEnvia().setQtdNeutro(comentario.getUsuarioEnvia().getQtdNeutro() + 1);
+			comentario.setClassificacao(2);
 			break;
 		default:
 			break;
 		}
 		SimuladorDB.atualizarUsuarios();
 		cbxAvaliacao.getSelectionModel().clearSelection();
+		tblComentarios.refresh();
 	}
 
 	/**
@@ -158,16 +196,14 @@ public class TelaPerfilDonoController {
 	void onPesquisar(final ActionEvent event) {
 
 		ComboBox<Usuario> cmb = new ComboBox<>();
-		
+
 		// cria uma lista
-		ArrayList<Usuario> usuarioSemOdono = new ArrayList<>(SimuladorDB.getUsuarios());		
+		ArrayList<Usuario> usuarioSemOdono = new ArrayList<>(SimuladorDB.getUsuarios());
 		// ele remove o cara que esta logado e deixa todos os outros
-		usuarioSemOdono.removeIf(u-> u.getLogin().equals(TelaLoginController.getLogado().getLogin()));
+		usuarioSemOdono.removeIf(u -> u.getLogin().equals(TelaLoginController.getLogado().getLogin()));
 
 		// no combobox vai conter os usuarios que tao no simuladorBD
 		cmb.getItems().addAll(usuarioSemOdono);
-		
-	
 
 		// ele da um new pegando daquela classe que faz a pesquisa letra por
 		// letra,
@@ -195,26 +231,23 @@ public class TelaPerfilDonoController {
 			// ele consome o evento (pesquisar)
 			event.consume();
 
+			// pega o usuario do combobox e salva lá na outra classe
+			TelaPerfilVisitanteController.setVisitado(cmb.getValue());
+			palco.close();
 
+			// fecha o stage (telinha)
 
-				// pega o usuario do combobox e salva lá na outra classe
-				TelaPerfilVisitanteController.setVisitado(cmb.getValue());
-				palco.close();
+			// carrega outra tela
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
+			try {
+				AnchorPane loginView = (AnchorPane) loader.load();
+				TelaPrincipal.root.setCenter(loginView);
 
-				// fecha o stage (telinha)
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 
-				// carrega outra tela
-				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
-				try {
-					AnchorPane loginView = (AnchorPane) loader.load();
-					TelaPrincipal.root.setCenter(loginView);
-
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
-
-			
 		}
 
 		);
