@@ -15,7 +15,7 @@
 	<children>
 		<Pane fx:id="pane" prefHeight="460.0" prefWidth="600.0">
 			<children>
-				<ImageView fitHeight="100.0" fitWidth="172.0" layoutX="3.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+				<ImageView fitHeight="100.0" fitWidth="172.0" layoutX="9.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
 					<image>
 						<Image url="@../../bfbfb944a9c2dcba437f8fd31d7c19122473aa36_hq.jpg" />
 					</image>
@@ -29,7 +29,7 @@
 				</TableView>
 				<Button fx:id="btnSair" layoutX="540.0" layoutY="2.0" mnemonicParsing="false" onAction="#onSair" prefHeight="25.0" prefWidth="59.0" text="sair" textFill="#f50909" />
 				<Button fx:id="btnPesquisar" layoutX="194.0" layoutY="2.0" mnemonicParsing="false" onAction="#onPesquisar" prefHeight="25.0" prefWidth="313.0" text="pesquisar pessoas" />
-            <Text fx:id="tNome" layoutX="199.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto">
+            <Text fx:id="tNome" layoutX="9.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto">
                <font>
                   <Font name="Comic Sans MS Bold" size="23.0" />
                </font>
@@ -39,12 +39,12 @@
                   <Font name="Comic Sans MS" size="15.0" />
                </font>
             </Text>
-            <Text fx:id="tDataNascimento" layoutX="378.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DataNascimento">
+            <Text fx:id="tDataNascimento" layoutX="471.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DataNascimento">
                <font>
                   <Font name="Comic Sans MS" size="15.0" />
                </font>
             </Text>
-            <Text fx:id="lSexo" layoutX="14.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sexo">
+            <Text fx:id="lSexo" layoutX="334.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sexo">
                <font>
                   <Font name="Comic Sans MS" size="15.0" />
                </font>
