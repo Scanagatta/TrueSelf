@@ -9,6 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -16,7 +17,9 @@
    <children>
       <Pane prefHeight="460.0" prefWidth="600.0" style="-fx-background-color: black;">
          <children>
-            <ImageView fx:id="imagemPerfil" fitHeight="100.0" fitWidth="172.0" layoutX="14.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
+            <Region layoutX="14.0" layoutY="69.0" prefHeight="109.0" prefWidth="171.0" style="-fx-background-color: white;" />
+            <Region layoutX="191.0" layoutY="102.0" prefHeight="65.0" prefWidth="396.0" style="-fx-background-color: white;" />
+            <ImageView fx:id="imagemPerfil" fitHeight="99.0" fitWidth="160.0" layoutX="19.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" />
             <TableView fx:id="tblComentarios" layoutX="14.0" layoutY="182.0" prefHeight="182.0" prefWidth="573.0">
               <columns>
                 <TableColumn fx:id="cData" prefWidth="75.0" text="Data" />
@@ -53,17 +56,17 @@
                   <Font name="Comic Sans MS" size="15.0" />
                </font>
             </Text>
-            <Text fx:id="countAnjo" fill="WHITE" layoutX="258.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo">
+            <Text fx:id="countAnjo" layoutX="258.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text fx:id="countDemonio" fill="WHITE" layoutX="400.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio">
+            <Text fx:id="countDemonio" layoutX="400.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text fx:id="countNeutro" fill="WHITE" layoutX="547.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro">
+            <Text fx:id="countNeutro" layoutX="547.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro">
                <font>
                   <Font size="23.0" />
                </font>
