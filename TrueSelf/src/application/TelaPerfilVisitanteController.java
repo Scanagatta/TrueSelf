@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.time.LocalDate;
 
 import TrueSelf.modelo.Comentario;
@@ -72,6 +73,9 @@ public class TelaPerfilVisitanteController {
 	private static Usuario visitado;
 
 	private Comentario comentario;
+	
+    @FXML
+    private ImageView imagemPerfil;
 
 	public static Usuario getVisitado() {
 		return visitado;
@@ -119,6 +123,16 @@ public class TelaPerfilVisitanteController {
 				return cell;
 			}
 		});
+		
+		if(visitado.getSexo().equals("Sexo: feminino")){
+			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Feminino.jpg");
+			Image imagem = new Image(input);
+			imagemPerfil.setImage(imagem);
+		} else {
+			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Masculino.jpg");
+			Image imagem = new Image(input);
+			imagemPerfil.setImage(imagem);
+		}
 		limparCampos();
 	}
 

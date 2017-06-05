@@ -84,6 +84,9 @@ public class TelaPerfilDonoController {
 	private Text lSexo;
 
 	private Comentario comentario;
+	
+    @FXML
+    private ImageView imagemPerfil;
 
 	public void initialize() {
 		SimuladorDB.getLogin(TelaLoginController.getDono());
@@ -132,6 +135,15 @@ public class TelaPerfilDonoController {
 		});
 		tblComentarios.setItems(FXCollections
 				.observableArrayList(SimuladorDB.getLogin(TelaLoginController.getDono()).getComentarios()));
+		if(TelaLoginController.getLogado().getSexo().equals("Sexo: feminino")){
+			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Feminino.jpg");
+			Image imagem = new Image(input);
+			imagemPerfil.setImage(imagem);
+		} else {
+			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Masculino.jpg");
+			Image imagem = new Image(input);
+			imagemPerfil.setImage(imagem);
+		}
 
 	}
 
