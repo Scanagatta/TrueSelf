@@ -14,34 +14,40 @@
 
 <AnchorPane fx:id="apPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CadastroController">
    <children>
-      <Pane prefHeight="400.0" prefWidth="600.0">
+      <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;">
          <children>
             <TextField fx:id="tfNome" layoutX="248.0" layoutY="69.0" prefHeight="25.0" prefWidth="293.0" />
-            <Text layoutX="92.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome completo" wrappingWidth="101.150390625" />
+            <Text fill="WHITE" layoutX="92.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome completo" wrappingWidth="101.150390625" />
             <TextField fx:id="tfTelefone" layoutX="248.0" layoutY="115.0" />
-            <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone" wrappingWidth="58.7285041809082" />
-            <Text layoutX="89.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Nascimento" />
+            <Text fill="WHITE" layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone" wrappingWidth="58.7285041809082" />
+            <Text fill="WHITE" layoutX="89.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Nascimento" />
             <DatePicker fx:id="dtNascimento" layoutX="248.0" layoutY="166.0" />
             <TextField fx:id="tfLogin" layoutX="248.0" layoutY="265.0" />
-            <Text layoutX="91.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
+            <Text fill="WHITE" layoutX="91.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
             <ComboBox fx:id="cbEstadoCivil" layoutX="247.0" layoutY="218.0" prefWidth="150.0" />
-            <Text layoutX="89.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado civil" />
-            <Text layoutX="90.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" />
-            <Text layoutX="90.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO" wrappingWidth="203.7285041809082">
+            <Text fill="WHITE" layoutX="89.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado civil" />
+            <Text fill="WHITE" layoutX="90.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" />
+            <Text fill="WHITE" layoutX="90.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO" wrappingWidth="203.7285041809082">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font></Text>
             <PasswordField fx:id="pfSenha" layoutX="247.0" layoutY="306.0" />
-            <Text layoutX="90.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmar senha" />
+            <Text fill="WHITE" layoutX="90.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmar senha" />
             <PasswordField fx:id="cpsSenha" layoutX="247.0" layoutY="345.0" />
-            <Button fx:id="btnSalvar" layoutX="452.0" layoutY="353.0" mnemonicParsing="false" onAction="#onsalvar" text="salvar" />
-            <Button fx:id="btnVoltar" layoutX="516.0" layoutY="353.0" mnemonicParsing="false" onAction="#onVoltar" text="voltar" />
-            <RadioButton fx:id="rdmasculino" layoutX="455.0" layoutY="119.0" mnemonicParsing="false" onAction="#onMasculino" text="Masculino">
+            <Button fx:id="btnSalvar" layoutX="452.0" layoutY="353.0" mnemonicParsing="false" onAction="#onsalvar" style="-fx-background-color: white;" text="salvar" textFill="#00ff1e">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnVoltar" layoutX="516.0" layoutY="353.0" mnemonicParsing="false" onAction="#onVoltar" style="-fx-background-color: white;" text="voltar" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <RadioButton fx:id="rdmasculino" layoutX="455.0" layoutY="119.0" mnemonicParsing="false" onAction="#onMasculino" text="Masculino" textFill="WHITE">
                <toggleGroup>
                   <ToggleGroup fx:id="radios" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="rdfeminino" layoutX="455.0" layoutY="149.0" mnemonicParsing="false" onAction="#onFeminino" text="Feminino" toggleGroup="$radios" />
+            <RadioButton fx:id="rdfeminino" layoutX="455.0" layoutY="149.0" mnemonicParsing="false" onAction="#onFeminino" text="Feminino" textFill="WHITE" toggleGroup="$radios" />
          </children>
       </Pane>
    </children>
