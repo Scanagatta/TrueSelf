@@ -14,7 +14,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TelaPerfilVisitanteController">
    <children>
-      <Pane prefHeight="460.0" prefWidth="600.0">
+      <Pane prefHeight="460.0" prefWidth="600.0" style="-fx-background-color: black;">
          <children>
             <ImageView fx:id="imagemPerfil" fitHeight="100.0" fitWidth="172.0" layoutX="14.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
             <TableView fx:id="tblComentarios" layoutX="14.0" layoutY="182.0" prefHeight="182.0" prefWidth="573.0">
@@ -24,40 +24,46 @@
                   <TableColumn fx:id="cClassificacao" minWidth="0.0" prefWidth="90.0" text="Classificação" />
               </columns>
             </TableView>
-            <Text layoutX="39.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comentário" />
-            <TextArea fx:id="taComentario" layoutX="102.0" layoutY="376.0" prefHeight="70.0" prefWidth="355.0" />
-            <Button fx:id="btnPostar" layoutX="470.0" layoutY="384.0" mnemonicParsing="false" onAction="#onPostar" prefHeight="51.0" prefWidth="95.0" text="postar" />
-            <Button fx:id="btnsair" layoutX="537.0" layoutY="2.0" mnemonicParsing="false" onAction="#onSair" prefHeight="25.0" prefWidth="59.0" text="sair" textFill="#d30404" />
-            <Button fx:id="btnperfil" layoutX="441.0" layoutY="2.0" mnemonicParsing="false" onAction="#onPerfil" prefHeight="25.0" prefWidth="77.0" text="meu perfil">
+            <Text fill="WHITE" layoutX="39.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comentário" />
+            <TextArea fx:id="taComentario" layoutX="102.0" layoutY="376.0" prefHeight="70.0" prefWidth="355.0" style="-fx-background-color: white;" />
+            <Button fx:id="btnPostar" layoutX="470.0" layoutY="384.0" mnemonicParsing="false" onAction="#onPostar" prefHeight="51.0" prefWidth="95.0" style="-fx-background-color: white;" text="postar" textFill="#f70202">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Text fx:id="tnome" layoutX="14.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto">
+            <Button fx:id="btnsair" layoutX="537.0" layoutY="2.0" mnemonicParsing="false" onAction="#onSair" prefHeight="25.0" prefWidth="59.0" text="sair" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnperfil" layoutX="457.0" layoutY="2.0" mnemonicParsing="false" onAction="#onPerfil" prefHeight="25.0" prefWidth="77.0" text="meu perfil" textFill="#008eff">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Text fx:id="tnome" fill="WHITE" layoutX="14.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto">
                <font>
                   <Font name="Comic Sans MS Bold" size="23.0" />
                </font>
             </Text>
-            <Text fx:id="tEstadoCivil" layoutX="223.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EstadoCivil">
+            <Text fx:id="tEstadoCivil" fill="WHITE" layoutX="223.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EstadoCivil">
                <font>
                   <Font name="Comic Sans MS" size="15.0" />
                </font>
             </Text>
-            <Text fx:id="tDataNascimento" layoutX="471.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DataNascimento">
+            <Text fx:id="tDataNascimento" fill="WHITE" layoutX="471.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DataNascimento">
                <font>
                   <Font name="Comic Sans MS" size="15.0" />
                </font>
             </Text>
-            <Text fx:id="countAnjo" layoutX="258.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo">
+            <Text fx:id="countAnjo" fill="WHITE" layoutX="258.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdAnjo">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text fx:id="countDemonio" layoutX="400.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio">
+            <Text fx:id="countDemonio" fill="WHITE" layoutX="400.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdDemonio">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
-            <Text fx:id="countNeutro" layoutX="547.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro">
+            <Text fx:id="countNeutro" fill="WHITE" layoutX="547.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qtdNeutro">
                <font>
                   <Font size="23.0" />
                </font>
@@ -77,7 +83,7 @@
                   <Image url="@../../anjo.png" />
                </image>
             </ImageView>
-            <Text fx:id="lSexo" layoutX="334.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sexo">
+            <Text fx:id="lSexo" fill="WHITE" layoutX="334.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sexo">
                <font>
                   <Font name="Comic Sans MS" size="15.0" />
                </font>
