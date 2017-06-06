@@ -81,7 +81,6 @@ public class TelaLoginController {
 
 	public void setDono(String dono) {
 		TelaLoginController.dono = dono;
-		// this.dono = dono;
 	}
 
 	public static Usuario getLogado() {

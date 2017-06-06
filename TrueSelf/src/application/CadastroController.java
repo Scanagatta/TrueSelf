@@ -112,7 +112,7 @@ public class CadastroController {
 		if (mulher) {
 			usuario.setSexo("Sexo: feminino");
 		}
-		if (tfNome.getText().equals(vazio) || tfTelefone.getText().equals(vazio))  {
+		if (tfNome.getText().equals(vazio) || tfTelefone.getText().equals(vazio)) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Erro");
 			alert.setHeaderText("Ação inválida");

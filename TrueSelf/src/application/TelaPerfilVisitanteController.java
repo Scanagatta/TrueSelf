@@ -73,9 +73,9 @@ public class TelaPerfilVisitanteController {
 	private static Usuario visitado;
 
 	private Comentario comentario;
-	
-    @FXML
-    private ImageView imagemPerfil;
+
+	@FXML
+	private ImageView imagemPerfil;
 
 	public static Usuario getVisitado() {
 		return visitado;
@@ -123,8 +123,8 @@ public class TelaPerfilVisitanteController {
 				return cell;
 			}
 		});
-		
-		if(visitado.getSexo().equals("Sexo: feminino")){
+
+		if (visitado.getSexo().equals("Sexo: feminino")) {
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Feminino.jpg");
 			Image imagem = new Image(input);
 			imagemPerfil.setImage(imagem);
@@ -175,7 +175,7 @@ public class TelaPerfilVisitanteController {
 	@FXML
 	void onPostar(ActionEvent event) {
 
-		comentario = new Comentario(taComentario.getText(),SimuladorDB.getLogin(TelaLoginController.getDono()),
+		comentario = new Comentario(taComentario.getText(), SimuladorDB.getLogin(TelaLoginController.getDono()),
 				visitado, LocalDate.now());
 		visitado.adicionarComentario(comentario);
 		tblComentarios.getItems().add(comentario);

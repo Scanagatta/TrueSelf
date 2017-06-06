@@ -85,9 +85,9 @@ public class TelaPerfilDonoController {
 	private Text lSexo;
 
 	private Comentario comentario;
-	
-    @FXML
-    private ImageView imagemPerfil;
+
+	@FXML
+	private ImageView imagemPerfil;
 
 	public void initialize() {
 		SimuladorDB.getLogin(TelaLoginController.getDono());
@@ -136,7 +136,7 @@ public class TelaPerfilDonoController {
 		});
 		tblComentarios.setItems(FXCollections
 				.observableArrayList(SimuladorDB.getLogin(TelaLoginController.getDono()).getComentarios()));
-		if(TelaLoginController.getLogado().getSexo().equals("Sexo: feminino")){
+		if (TelaLoginController.getLogado().getSexo().equals("Sexo: feminino")) {
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Feminino.jpg");
 			Image imagem = new Image(input);
 			imagemPerfil.setImage(imagem);
@@ -224,10 +224,10 @@ public class TelaPerfilDonoController {
 		new PesquisaCombobox<Usuario>(cmb);
 
 		Stage palco = new Stage();
-		
+
 		// agora o pesquisar abre só uma vez
 		palco.initModality(Modality.APPLICATION_MODAL);
-		
+
 		VBox raiz = new VBox(10); // 1
 		raiz.setAlignment(Pos.CENTER); // 2
 
@@ -271,25 +271,3 @@ public class TelaPerfilDonoController {
 
 	}
 }
-
-// stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-// @Override
-// public void handle(WindowEvent t) {
-// t.consume();
-//
-// TelaPerfilVisitanteController.setUsuario(cmb.getValue());
-//
-// FXMLLoader loader = new FXMLLoader();
-// loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
-// try {
-// AnchorPane loginView = (AnchorPane) loader.load();
-// TelaPrincipal.root.setCenter(loginView);
-//
-// } catch (IOException e1) {
-// e1.printStackTrace();
-// }
-//
-// stage1.close();
-//
-// }
-// });
