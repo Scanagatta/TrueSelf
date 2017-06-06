@@ -31,6 +31,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -223,6 +224,10 @@ public class TelaPerfilDonoController {
 		new PesquisaCombobox<Usuario>(cmb);
 
 		Stage palco = new Stage();
+		
+		// agora o pesquisar abre só uma vez
+		palco.initModality(Modality.APPLICATION_MODAL);
+		
 		VBox raiz = new VBox(10); // 1
 		raiz.setAlignment(Pos.CENTER); // 2
 
