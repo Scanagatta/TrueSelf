@@ -127,10 +127,15 @@ public class TelaPerfilVisitanteController {
 		if (visitado.getSexo().equals("Sexo: feminino")) {
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Feminino.jpg");
 			Image imagem = new Image(input);
+			imagemPerfil.setFitHeight(97);
+			
+			imagemPerfil.setLayoutX(25);
 			imagemPerfil.setImage(imagem);
 		} else {
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Masculino.jpg");
 			Image imagem = new Image(input);
+			imagemPerfil.setFitHeight(99);
+			imagemPerfil.setLayoutY(80);
 			imagemPerfil.setImage(imagem);
 		}
 		limparCampos();

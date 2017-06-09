@@ -139,10 +139,17 @@ public class TelaPerfilDonoController {
 		if (TelaLoginController.getLogado().getSexo().equals("Sexo: feminino")) {
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Feminino.jpg");
 			Image imagem = new Image(input);
+			imagemPerfil.setFitHeight(95);
+			
+			imagemPerfil.setLayoutX(25);
+			
 			imagemPerfil.setImage(imagem);
+
 		} else {
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Masculino.jpg");
 			Image imagem = new Image(input);
+			imagemPerfil.setFitHeight(95);
+			
 			imagemPerfil.setImage(imagem);
 		}
 

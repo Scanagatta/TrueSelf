@@ -19,7 +19,7 @@
          <children>
             <Region layoutX="14.0" layoutY="69.0" prefHeight="109.0" prefWidth="171.0" style="-fx-background-color: white;" />
             <Region layoutX="191.0" layoutY="102.0" prefHeight="65.0" prefWidth="396.0" style="-fx-background-color: white;" />
-            <ImageView fx:id="imagemPerfil" fitHeight="99.0" fitWidth="160.0" layoutX="19.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imagemPerfil" fitHeight="100.0" fitWidth="160.0" layoutX="19.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" />
             <TableView fx:id="tblComentarios" layoutX="14.0" layoutY="182.0" prefHeight="182.0" prefWidth="573.0">
               <columns>
                 <TableColumn fx:id="cData" prefWidth="75.0" text="Data" />
