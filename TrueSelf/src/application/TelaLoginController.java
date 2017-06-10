@@ -32,7 +32,6 @@ public class TelaLoginController {
 	private Button btnVoltar;
 
 	private static String dono;
-
 	private static Usuario logado;
 
 	@FXML
@@ -42,19 +41,21 @@ public class TelaLoginController {
 		String senha = pfSenha.getText();
 		Usuario usuario = SimuladorDB.getLogin(login);
 		setLogado(usuario);
+
 		if (usuario != null && usuario.getSenha().equals(senha)) {
 			setDono(login);
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("telaPerfilDono.fxml"));
+
 			try {
 				AnchorPane donoView = (AnchorPane) loader.load();
 				TelaPrincipal.root.setCenter(donoView);
-
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
+
 		} else {
-			mensagens.erroLogin();
+			mensagens.erroPrenchimento();
 		}
 	}
 
@@ -62,6 +63,7 @@ public class TelaLoginController {
 	void onVoltar(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("telaPrimeira.fxml"));
+
 		try {
 			AnchorPane principal1View = (AnchorPane) loader.load();
 			TelaPrincipal.root.setCenter(principal1View);

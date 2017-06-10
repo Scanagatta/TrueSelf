@@ -32,8 +32,8 @@ public class TelaPrimeiraController {
 		stage.setScene(new Scene(new StackPane(texto)));
 		stage.setTitle("Importante");
 		texto.setText("True self é uma espécie de rede social offline\n\n\nCriado com o intuito de as pessoas"
-				+ " interagirem\nentre elas, dando sua opinião uma sobre a outra\n\nDesenvolvido por acadêmicos da UNOESC- Xanxerê\n"
-				+ "do curso de Tecnologia em Análise e Desenvolvimento\nde Sistemas - 3ª fase\n\n\n\n\n TrueSelf® 2017");
+				+ " interagirementre elas,\nfazendo comentários(bons ou ruins) uma sobre as outras\n\nDesenvolvido por acadêmicos da UNOESC- Xanxerê "
+				+ "do curso de\nTecnologia em Análise e Desenvolvimento de Sistemas - 3ª fase\n\nAndre Vicensi Uliana e João Victor Scanagatta\n\n\n\n TrueSelf® 2017");
 
 		stage.setWidth(390);
 		stage.setHeight(300);
@@ -41,10 +41,10 @@ public class TelaPrimeiraController {
 
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("telaCadastro.fxml"));
+		
 		try {
 			AnchorPane agenciaView = (AnchorPane) loader.load();
 			TelaPrincipal.root.setCenter(agenciaView);
-
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -55,10 +55,10 @@ public class TelaPrimeiraController {
 	void onLogar(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("telaLogin.fxml"));
+		
 		try {
 			AnchorPane loginView = (AnchorPane) loader.load();
 			TelaPrincipal.root.setCenter(loginView);
-
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

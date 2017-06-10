@@ -128,7 +128,6 @@ public class TelaPerfilVisitanteController {
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Feminino.jpg");
 			Image imagem = new Image(input);
 			imagemPerfil.setFitHeight(97);
-			
 			imagemPerfil.setLayoutX(25);
 			imagemPerfil.setImage(imagem);
 		} else {
@@ -150,10 +149,10 @@ public class TelaPerfilVisitanteController {
 	void onPerfil(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("telaPerfilDono.fxml"));
+
 		try {
 			AnchorPane principal1View = (AnchorPane) loader.load();
 			TelaPrincipal.root.setCenter(principal1View);
-
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -168,10 +167,10 @@ public class TelaPerfilVisitanteController {
 	void onSair(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("telaPrimeira.fxml"));
+
 		try {
 			AnchorPane principal1View = (AnchorPane) loader.load();
 			TelaPrincipal.root.setCenter(principal1View);
-
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

@@ -16,14 +16,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -36,6 +34,9 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 public class TelaPerfilDonoController {
+
+	public Mensagens mensagens = new Mensagens();
+
 	@FXML
 	private Pane pane;
 
@@ -136,20 +137,18 @@ public class TelaPerfilDonoController {
 		});
 		tblComentarios.setItems(FXCollections
 				.observableArrayList(SimuladorDB.getLogin(TelaLoginController.getDono()).getComentarios()));
+
 		if (TelaLoginController.getLogado().getSexo().equals("Sexo: feminino")) {
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Feminino.jpg");
 			Image imagem = new Image(input);
 			imagemPerfil.setFitHeight(95);
-			
 			imagemPerfil.setLayoutX(25);
-			
 			imagemPerfil.setImage(imagem);
 
 		} else {
 			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Masculino.jpg");
 			Image imagem = new Image(input);
 			imagemPerfil.setFitHeight(95);
-			
 			imagemPerfil.setImage(imagem);
 		}
 
@@ -164,10 +163,10 @@ public class TelaPerfilDonoController {
 	void onSair(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("telaPrimeira.fxml"));
+
 		try {
 			AnchorPane principal1View = (AnchorPane) loader.load();
 			TelaPrincipal.root.setCenter(principal1View);
-
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -177,15 +176,12 @@ public class TelaPerfilDonoController {
 	void onAvaliar(ActionEvent event) {
 		comentario = tblComentarios.getSelectionModel().getSelectedItem();
 		if (comentario.getClassificacao() != null) {
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Erro");
-			alert.setHeaderText("Ação inválida");
-			alert.setContentText("Comentario ja classificado");
-			alert.showAndWait();
+			mensagens.comentarioAvaliado();
 			cbxAvaliacao.getSelectionModel().clearSelection();
 			// já classificou...
 			return;
 		}
+
 		switch ((cbxAvaliacao.getSelectionModel().getSelectedIndex())) {
 		case 0:
 			comentario.getUsuarioEnvia().setQtdAnjo(comentario.getUsuarioEnvia().getQtdAnjo() + 1);
@@ -202,6 +198,7 @@ public class TelaPerfilDonoController {
 		default:
 			break;
 		}
+
 		SimuladorDB.atualizarUsuarios();
 		cbxAvaliacao.getSelectionModel().clearSelection();
 		tblComentarios.refresh();
@@ -214,7 +211,6 @@ public class TelaPerfilDonoController {
 	 */
 	@FXML
 	void onPesquisar(final ActionEvent event) {
-
 		ComboBox<Usuario> cmb = new ComboBox<>();
 
 		// cria uma lista
@@ -229,21 +225,16 @@ public class TelaPerfilDonoController {
 		// letra,
 		// sem essa linha a pesquisa de letras não funciona
 		new PesquisaCombobox<Usuario>(cmb);
-
+		
 		Stage palco = new Stage();
-
 		// agora o pesquisar abre só uma vez
 		palco.initModality(Modality.APPLICATION_MODAL);
 
 		VBox raiz = new VBox(10); // 1
 		raiz.setAlignment(Pos.CENTER); // 2
-
 		Label campoTexto = new Label("Digite o nome do usuário que deseja buscar:"); // 5
-
 		raiz.getChildren().addAll(campoTexto, cmb);
-
 		Scene cena = new Scene(raiz, 350, 200);
-
 		palco.setTitle("Pesquisa de Perfil");
 		palco.setScene(cena);
 		palco.show();
@@ -259,15 +250,13 @@ public class TelaPerfilDonoController {
 			TelaPerfilVisitanteController.setVisitado(cmb.getValue());
 			palco.close();
 
-			// fecha o stage (telinha)
-
 			// carrega outra tela
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("telaPerfilVisitante.fxml"));
+
 			try {
 				AnchorPane loginView = (AnchorPane) loader.load();
 				TelaPrincipal.root.setCenter(loginView);
-
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}

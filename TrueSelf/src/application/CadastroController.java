@@ -8,7 +8,6 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -16,10 +15,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 
 public class CadastroController {
+
+	public Mensagens mensagens = new Mensagens();
 
 	@FXML
 	private AnchorPane apPrincipal;
@@ -59,9 +59,7 @@ public class CadastroController {
 
 	@FXML
 	private ToggleGroup radios;
-
 	private boolean mulher = false;
-
 	private boolean homem = false;
 
 	private Usuario usuario;
@@ -93,10 +91,10 @@ public class CadastroController {
 	void onVoltar(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("telaPrimeira.fxml"));
+
 		try {
 			AnchorPane principal1View = (AnchorPane) loader.load();
 			TelaPrincipal.root.setCenter(principal1View);
-
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -112,19 +110,12 @@ public class CadastroController {
 		if (mulher) {
 			usuario.setSexo("Sexo: feminino");
 		}
-		if (tfNome.getText().equals(vazio) || tfTelefone.getText().equals(vazio)) {
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Erro");
-			alert.setHeaderText("Ação inválida");
-			alert.setContentText("Preencha TODOS os campos");
-			alert.showAndWait();
+
+		if (tfNome.getText().equals(vazio) || tfTelefone.getText().equals(vazio) || tfLogin.getText().equals(vazio)) {
+			mensagens.erroPrenchimento();
 		} else {
 			if (homem == false && mulher == false) {
-				Alert alert = new Alert(AlertType.ERROR);
-				alert.setTitle("Erro");
-				alert.setHeaderText("Ação inválida");
-				alert.setContentText("Selecione o sexo");
-				alert.showAndWait();
+				mensagens.erroSexo();
 			} else {
 				usuario.setNome(tfNome.getText());
 				usuario.setTelefone(tfTelefone.getText());
@@ -136,18 +127,16 @@ public class CadastroController {
 						SimuladorDB.insert(usuario);
 						FXMLLoader loader = new FXMLLoader();
 						loader.setLocation(getClass().getResource("telaLogin.fxml"));
+
 						try {
 							AnchorPane loginView = (AnchorPane) loader.load();
 							TelaPrincipal.root.setCenter(loginView);
 						} catch (IOException e1) {
 							e1.printStackTrace();
 						}
+
 					} else {
-						Alert alert = new Alert(AlertType.ERROR);
-						alert.setTitle("Erro");
-						alert.setHeaderText("Ação inválida");
-						alert.setContentText("Login existente");
-						alert.showAndWait();
+						mensagens.erroLoginJaExiste();
 						limparSenha();
 					}
 				}
@@ -158,27 +147,20 @@ public class CadastroController {
 	public boolean conferirSenha() {
 		String senha = pfSenha.getText();
 		String confirmaSenha = cpsSenha.getText();
+
 		// ver se as senhas estao vazias
 		if (senha.isEmpty() || confirmaSenha.isEmpty()) {
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Erro");
-			alert.setHeaderText("Ação inválida");
-			alert.setContentText("Preencha TODOS os campos");
-			alert.showAndWait();
+			mensagens.erroSenha();
 			limparSenha();
 			return false;
-
 		}
+
 		// ver se as senhas sao iguais
 		if (senha.equals(confirmaSenha)) {
 			usuario.setSenha(senha);
 			return true;
 		} else {
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Erro");
-			alert.setHeaderText("As senhas não são iguais");
-			alert.setContentText("Digite a senha corretamente");
-			alert.showAndWait();
+			mensagens.senhaNaoExiste();
 			limparSenha();
 			return false;
 		}

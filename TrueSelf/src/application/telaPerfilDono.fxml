@@ -24,7 +24,7 @@
 					</columns>
 				</TableView>
 				<Button fx:id="btnPesquisar" layoutX="335.0" layoutY="1.0" mnemonicParsing="false" onAction="#onPesquisar" prefHeight="25.0" prefWidth="193.0" text="pesquisar pessoas" />
-            <Text fx:id="tNome" fill="WHITE" layoutX="9.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto">
+            <Text fx:id="tNome" fill="WHITE" layoutX="13.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do garoto">
                <font>
                   <Font name="Comic Sans MS Bold" size="23.0" />
                </font>
