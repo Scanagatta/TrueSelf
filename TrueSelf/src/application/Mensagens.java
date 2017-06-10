@@ -29,6 +29,14 @@ public class Mensagens {
 		alert.setContentText("Preencha TODOS os campos");
 		alert.showAndWait();
 	}
+	
+	public void erroPrenchimentoLogin() {
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("Erro");
+		alert.setHeaderText("Ação inválida");
+		alert.setContentText("Login ou senha incorretos");
+		alert.showAndWait();
+	}
 
 	public void erroLoginJaExiste() {
 		Alert alert = new Alert(AlertType.ERROR);

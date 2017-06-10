@@ -32,7 +32,7 @@ public class TelaPrimeiraController {
 		stage.setScene(new Scene(new StackPane(texto)));
 		stage.setTitle("Importante");
 		texto.setText("True self é uma espécie de rede social offline\n\n\nCriado com o intuito de as pessoas"
-				+ " interagirementre elas,\nfazendo comentários(bons ou ruins) uma sobre as outras\n\nDesenvolvido por acadêmicos da UNOESC- Xanxerê "
+				+ " interagirem entre elas,\nfazendo comentários(bons ou ruins) uma sobre as outras\n\nDesenvolvido por acadêmicos da UNOESC- Xanxerê "
 				+ "do curso de\nTecnologia em Análise e Desenvolvimento de Sistemas - 3ª fase\n\nAndre Vicensi Uliana e João Victor Scanagatta\n\n\n\n TrueSelf® 2017");
 
 		stage.setWidth(390);

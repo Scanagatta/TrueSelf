@@ -55,7 +55,7 @@ public class TelaLoginController {
 			}
 
 		} else {
-			mensagens.erroPrenchimento();
+			mensagens.erroPrenchimentoLogin();
 		}
 	}
 
