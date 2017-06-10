@@ -7,14 +7,14 @@ import TrueSelf.modelo.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 
 public class TelaLoginController {
+
+	public Mensagens mensagens = new Mensagens();
 
 	@FXML
 	private AnchorPane tela;
@@ -54,11 +54,7 @@ public class TelaLoginController {
 				e1.printStackTrace();
 			}
 		} else {
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Erro");
-			alert.setHeaderText("");
-			alert.setContentText("Preencha os campos");
-			alert.showAndWait();
+			mensagens.erroLogin();
 		}
 	}
 
