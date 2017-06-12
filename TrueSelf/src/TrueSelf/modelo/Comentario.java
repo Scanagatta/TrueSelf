@@ -53,7 +53,7 @@ public class Comentario implements Serializable {
 	public String toString() {
 		return comentario;
 	}
-
+	
 	public Image getImagemClassificacao() {
 		if (getClassificacao() == null) {
 			return null;
