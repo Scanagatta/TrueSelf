@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import TrueSelf.modelo.SimuladorDB;
 import TrueSelf.modelo.Usuario;
@@ -64,8 +65,6 @@ public class CadastroController {
 
 	private Usuario usuario;
 
-	private String vazio = "";
-
 	public void initialize() {
 		cbEstadoCivil.setItems(FXCollections.observableArrayList("solteiro(a)", "namorando", "casado(a)",
 				"divorciado(a)", "viúvo(a)"));
@@ -111,34 +110,33 @@ public class CadastroController {
 			usuario.setSexo("Sexo: feminino");
 		}
 
-		if (tfNome.getText().equals(vazio) || tfTelefone.getText().equals(vazio) || tfLogin.getText().equals(vazio)) {
+		if (conferirCampos()) {
 			mensagens.erroPrenchimento();
+		}
+		if (homem == false && mulher == false) {
+			mensagens.erroSexo();
 		} else {
-			if (homem == false && mulher == false) {
-				mensagens.erroSexo();
-			} else {
-				usuario.setNome(tfNome.getText());
-				usuario.setTelefone(tfTelefone.getText());
-				usuario.setDataNascimento(dtNascimento.getValue());
-				usuario.setLogin(tfLogin.getText());
-				usuario.setEstadoCivil(cbEstadoCivil.getValue());
-				if (conferirSenha()) {
-					if (SimuladorDB.getLogin(tfLogin.getText()) == null) {
-						SimuladorDB.insert(usuario);
-						FXMLLoader loader = new FXMLLoader();
-						loader.setLocation(getClass().getResource("telaLogin.fxml"));
+			usuario.setNome(tfNome.getText());
+			usuario.setTelefone(tfTelefone.getText());
+			usuario.setDataNascimento(dtNascimento.getValue());
+			usuario.setLogin(tfLogin.getText());
+			usuario.setEstadoCivil(cbEstadoCivil.getValue());
+			if (conferirSenha()) {
+				if (SimuladorDB.getLogin(tfLogin.getText()) == null) {
+					SimuladorDB.insert(usuario);
+					FXMLLoader loader = new FXMLLoader();
+					loader.setLocation(getClass().getResource("telaLogin.fxml"));
 
-						try {
-							AnchorPane loginView = (AnchorPane) loader.load();
-							TelaPrincipal.root.setCenter(loginView);
-						} catch (IOException e1) {
-							e1.printStackTrace();
-						}
-
-					} else {
-						mensagens.erroLoginJaExiste();
-						limparSenha();
+					try {
+						AnchorPane loginView = (AnchorPane) loader.load();
+						TelaPrincipal.root.setCenter(loginView);
+					} catch (IOException e1) {
+						e1.printStackTrace();
 					}
+
+				} else {
+					mensagens.erroLoginJaExiste();
+					limparSenha();
 				}
 			}
 		}
@@ -169,6 +167,14 @@ public class CadastroController {
 	public void limparSenha() {
 		pfSenha.setText("");
 		cpsSenha.setText("");
+	}
+
+	public boolean conferirCampos() {
+		for (TextField campos : Arrays.asList(tfNome, tfTelefone, tfLogin, cpsSenha, pfSenha)) {
+			campos.getText().isEmpty();
+			return true;
+		}
+		return false;
 	}
 
 }
