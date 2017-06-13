@@ -97,10 +97,8 @@ public class TelaPerfilVisitanteController {
 		countAnjo.setText(getVisitado().getQtdAnjo().toString());
 		countDemonio.setText(getVisitado().getQtdDemonio().toString());
 		countNeutro.setText(getVisitado().getQtdNeutro().toString());
-
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
 		cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
-
 		tblComentarios.setItems(
 				FXCollections.observableArrayList(SimuladorDB.getLogin(visitado.getLogin()).getComentarios()));
 		cClassificacao.setCellValueFactory(new PropertyValueFactory<>("imagemClassificacao"));
@@ -123,20 +121,7 @@ public class TelaPerfilVisitanteController {
 				return cell;
 			}
 		});
-
-		if (visitado.getSexo().equals("Sexo: feminino")) {
-			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Feminino.jpg");
-			Image imagem = new Image(input);
-			imagemPerfil.setFitHeight(97);
-			imagemPerfil.setLayoutX(25);
-			imagemPerfil.setImage(imagem);
-		} else {
-			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Masculino.jpg");
-			Image imagem = new Image(input);
-			imagemPerfil.setFitHeight(99);
-			imagemPerfil.setLayoutY(80);
-			imagemPerfil.setImage(imagem);
-		}
+		iniciarImagensPerfil();
 		limparCampos();
 	}
 
@@ -189,6 +174,22 @@ public class TelaPerfilVisitanteController {
 
 	private void limparCampos() {
 		taComentario.setText("");
+	}
+	
+	public void iniciarImagensPerfil(){
+		if (visitado.getSexo().equals("Sexo: feminino")) {
+			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Feminino.jpg");
+			Image imagem = new Image(input);
+			imagemPerfil.setFitHeight(97);
+			imagemPerfil.setLayoutX(25);
+			imagemPerfil.setImage(imagem);
+		} else {
+			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Masculino.jpg");
+			Image imagem = new Image(input);
+			imagemPerfil.setFitHeight(99);
+			imagemPerfil.setLayoutY(80);
+			imagemPerfil.setImage(imagem);
+		}
 	}
 
 }

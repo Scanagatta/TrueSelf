@@ -99,22 +99,10 @@ public class TelaPerfilDonoController {
 		countAnjo.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdAnjo().toString());
 		countDemonio.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdDemonio().toString());
 		countNeutro.setText(SimuladorDB.getLogin(TelaLoginController.getDono()).getQtdNeutro().toString());
-
-		for (String img : Arrays.asList("image1.png", "image2.png", "image3.png")) {
-			// encontra o lugar onde esta a imagem
-			InputStream input = TelaPerfilDonoController.class.getResourceAsStream(img);
-			// coloca a imagem em um image
-			Image imagem = new Image(input);
-			// coloca o image no imageView
-			ImageView icone = new ImageView();
-			icone.setImage(imagem);
-			// coloca o image view no combobox
-			cbxAvaliacao.getItems().addAll(icone);
-		}
-
+		imagensCombobox();
+		iniciarImagensPerfil();
 		cData.setCellValueFactory(new PropertyValueFactory<>("data"));
 		cComentario.setCellValueFactory(new PropertyValueFactory<>("comentario"));
-
 		cClassificacao.setCellValueFactory(new PropertyValueFactory<>("imagemClassificacao"));
 		cClassificacao.setCellFactory(new Callback<TableColumn<Comentario, Image>, TableCell<Comentario, Image>>() {
 
@@ -137,20 +125,6 @@ public class TelaPerfilDonoController {
 		});
 		tblComentarios.setItems(FXCollections
 				.observableArrayList(SimuladorDB.getLogin(TelaLoginController.getDono()).getComentarios()));
-
-		if (TelaLoginController.getLogado().getSexo().equals("Sexo: feminino")) {
-			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Feminino.jpg");
-			Image imagem = new Image(input);
-			imagemPerfil.setFitHeight(95);
-			imagemPerfil.setLayoutX(25);
-			imagemPerfil.setImage(imagem);
-
-		} else {
-			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Masculino.jpg");
-			Image imagem = new Image(input);
-			imagemPerfil.setFitHeight(95);
-			imagemPerfil.setImage(imagem);
-		}
 
 	}
 
@@ -264,6 +238,37 @@ public class TelaPerfilDonoController {
 		}
 
 		);
-
 	}
+	
+	public void iniciarImagensPerfil(){
+
+		if (TelaLoginController.getLogado().getSexo().equals("Sexo: feminino")) {
+			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Feminino.jpg");
+			Image imagem = new Image(input);
+			imagemPerfil.setFitHeight(95);
+			imagemPerfil.setLayoutX(25);
+			imagemPerfil.setImage(imagem);
+
+		} else {
+			InputStream input = TelaPerfilDonoController.class.getResourceAsStream("Masculino.jpg");
+			Image imagem = new Image(input);
+			imagemPerfil.setFitHeight(95);
+			imagemPerfil.setImage(imagem);
+		}
+	}
+	
+	public void imagensCombobox(){
+		for (String img : Arrays.asList("image1.png", "image2.png", "image3.png")) {
+			// encontra o lugar onde esta a imagem
+			InputStream input = TelaPerfilDonoController.class.getResourceAsStream(img);
+			// coloca a imagem em um image
+			Image imagem = new Image(input);
+			// coloca o image no imageView
+			ImageView icone = new ImageView();
+			icone.setImage(imagem);
+			// coloca o image view no combobox
+			cbxAvaliacao.getItems().addAll(icone);
+		}
+	}
+	
 }
