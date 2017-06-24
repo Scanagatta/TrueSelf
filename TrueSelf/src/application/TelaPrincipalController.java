@@ -6,11 +6,6 @@ import javafx.scene.layout.BorderPane;
 
 public class TelaPrincipalController {
 
-	@FXML
-	private Button btnLogin;
-
-	@FXML
-	private Button btnCadastro;
 
 	@FXML
 	private BorderPane bpTela;

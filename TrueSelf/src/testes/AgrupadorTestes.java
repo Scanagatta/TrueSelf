@@ -6,7 +6,8 @@ import org.junit.runners.Suite.SuiteClasses;
 
 
 @RunWith(Suite.class)
-@SuiteClasses({UsuarioTeste.class, ComentarioTeste.class, LoginControllerTest.class})
+@SuiteClasses({UsuarioTeste.class, ComentarioTeste.class, LoginControllerTest.class, CadastroTest.class, VisitanteTest.class,
+	SimuladorDBTeste.class})
 public class AgrupadorTestes {
 
 }

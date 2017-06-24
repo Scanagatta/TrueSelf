@@ -17,6 +17,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import lombok.Getter;
 
 public class CadastroController {
 
@@ -60,9 +61,12 @@ public class CadastroController {
 
 	@FXML
 	private ToggleGroup radios;
+	@Getter
 	private boolean mulher = false;
+	@Getter
 	private boolean homem = false;
-
+	
+	@Getter
 	private Usuario usuario;
 
 	public void initialize() {
@@ -72,7 +76,7 @@ public class CadastroController {
 
 	@FXML
 	void onFeminino(ActionEvent event) {
-		mulher = true;
+		mulher = true; 
 
 	}
 
@@ -112,6 +116,7 @@ public class CadastroController {
 
 		if (conferirCampos()) {
 			mensagens.erroPrenchimento();
+			return ;
 		}
 		if (homem == false && mulher == false) {
 			mensagens.erroSexo();
@@ -169,10 +174,12 @@ public class CadastroController {
 		cpsSenha.setText("");
 	}
 
+	
 	public boolean conferirCampos() {
 		for (TextField campos : Arrays.asList(tfNome, tfTelefone, tfLogin, cpsSenha, pfSenha)) {
-			campos.getText().isEmpty();
-			return true;
+			if (campos.getText().isEmpty()){
+					return true;
+			}
 		}
 		return false;
 	}
