@@ -148,19 +148,18 @@ public class CadastroController {
 	}
 
 	public boolean conferirSenha() {
-		String senha = pfSenha.getText();
-		String confirmaSenha = cpsSenha.getText();
+		ConfereSenha senhas = new ConfereSenha(pfSenha.getText(), cpsSenha.getText());
 
 		// ver se as senhas estao vazias
-		if (senha.isEmpty() || confirmaSenha.isEmpty()) {
+		if (senhas.isSenhaVazia()) {
 			mensagens.erroSenha();
 			limparSenha();
-			return false;
+			return false; 
 		}
 
 		// ver se as senhas sao iguais
-		if (senha.equals(confirmaSenha)) {
-			usuario.setSenha(senha);
+		if (senhas.isSenhaIgual()) {
+			usuario.setSenha(senhas.senha);
 			return true;
 		} else {
 			mensagens.senhaNaoExiste();
