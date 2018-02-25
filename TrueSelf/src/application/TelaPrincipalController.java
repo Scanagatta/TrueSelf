@@ -5,12 +5,7 @@ import javafx.scene.layout.BorderPane;
 
 public class TelaPrincipalController {
 
-
 	@FXML
 	private BorderPane bpTela;
-
-	public void initialize() {
-
-	}
 
 }

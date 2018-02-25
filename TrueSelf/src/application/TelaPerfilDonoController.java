@@ -140,7 +140,7 @@ public class TelaPerfilDonoController {
 
 		try {
 			AnchorPane principal1View = (AnchorPane) loader.load();
-			TelaPrincipal.root.setCenter(principal1View);
+			Main.root.setCenter(principal1View);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -230,7 +230,7 @@ public class TelaPerfilDonoController {
 
 			try {
 				AnchorPane loginView = (AnchorPane) loader.load();
-				TelaPrincipal.root.setCenter(loginView);
+				Main.root.setCenter(loginView);
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}

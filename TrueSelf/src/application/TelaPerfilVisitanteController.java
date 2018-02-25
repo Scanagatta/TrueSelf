@@ -137,7 +137,7 @@ public class TelaPerfilVisitanteController {
 
 		try {
 			AnchorPane principal1View = (AnchorPane) loader.load();
-			TelaPrincipal.root.setCenter(principal1View);
+			Main.root.setCenter(principal1View);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -155,7 +155,7 @@ public class TelaPerfilVisitanteController {
 
 		try {
 			AnchorPane principal1View = (AnchorPane) loader.load();
-			TelaPrincipal.root.setCenter(principal1View);
+			Main.root.setCenter(principal1View);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

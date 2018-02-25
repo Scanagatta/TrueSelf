@@ -44,7 +44,7 @@ public class TelaPrimeiraController {
 		
 		try {
 			AnchorPane agenciaView = (AnchorPane) loader.load();
-			TelaPrincipal.root.setCenter(agenciaView);
+			Main.root.setCenter(agenciaView);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -58,7 +58,7 @@ public class TelaPrimeiraController {
 		
 		try {
 			AnchorPane loginView = (AnchorPane) loader.load();
-			TelaPrincipal.root.setCenter(loginView);
+			Main.root.setCenter(loginView);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
